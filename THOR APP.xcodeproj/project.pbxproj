@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65AC034F1C43466700DD51F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC034E1C43466700DD51F8 /* main.m */; };
+		65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03511C43466700DD51F8 /* AppDelegate.mm */; };
+		65AC035A1C43466700DD51F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AC03591C43466700DD51F8 /* Assets.xcassets */; };
+		65AC03681C43466700DD51F8 /* THOR_APPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03671C43466700DD51F8 /* THOR_APPTests.m */; };
+		65AC03741C43474100DD51F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AC03731C43474100DD51F8 /* MapKit.framework */; };
+		65AC03761C43475E00DD51F8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AC03751C43475E00DD51F8 /* libz.tbd */; };
+		65AC03781C43477000DD51F8 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AC03771C43477000DD51F8 /* libstdc++.6.0.9.tbd */; };
+		65AC037B1C4348F000DD51F8 /* DJIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC037A1C4348F000DD51F8 /* DJIRootViewController.m */; };
+		65AC03801C434A2400DD51F8 /* DJIMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC037F1C434A2400DD51F8 /* DJIMapController.m */; };
+		65AC03831C434AA900DD51F8 /* DJIAircraftAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03821C434AA900DD51F8 /* DJIAircraftAnnotationView.m */; };
+		65AC03861C434AF300DD51F8 /* DJIAircraftAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03851C434AF300DD51F8 /* DJIAircraftAnnotation.m */; };
+		65C3D5761C43558600AD50A2 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C3D5751C43558600AD50A2 /* DJISDK.framework */; };
+		65C3D5781C4356D200AD50A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5771C4356D200AD50A2 /* Main.storyboard */; };
+		65C3D57A1C4356FB00AD50A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65AC03641C43466700DD51F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65AC03421C43466700DD51F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65AC03491C43466700DD51F8;
+			remoteInfo = "THOR APP";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65AC034A1C43466700DD51F8 /* THOR APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "THOR APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AC034E1C43466700DD51F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65AC03501C43466700DD51F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65AC03511C43466700DD51F8 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		65AC03591C43466700DD51F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65AC035E1C43466700DD51F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65AC03631C43466700DD51F8 /* THOR APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "THOR APPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AC03671C43466700DD51F8 /* THOR_APPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THOR_APPTests.m; sourceTree = "<group>"; };
+		65AC03691C43466700DD51F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65AC03731C43474100DD51F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		65AC03751C43475E00DD51F8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		65AC03771C43477000DD51F8 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		65AC03791C4348F000DD51F8 /* DJIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIRootViewController.h; sourceTree = "<group>"; };
+		65AC037A1C4348F000DD51F8 /* DJIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIRootViewController.m; sourceTree = "<group>"; };
+		65AC037E1C434A2400DD51F8 /* DJIMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIMapController.h; sourceTree = "<group>"; };
+		65AC037F1C434A2400DD51F8 /* DJIMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIMapController.m; sourceTree = "<group>"; };
+		65AC03811C434AA900DD51F8 /* DJIAircraftAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAircraftAnnotationView.h; sourceTree = "<group>"; };
+		65AC03821C434AA900DD51F8 /* DJIAircraftAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAircraftAnnotationView.m; sourceTree = "<group>"; };
+		65AC03841C434AF300DD51F8 /* DJIAircraftAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAircraftAnnotation.h; sourceTree = "<group>"; };
+		65AC03851C434AF300DD51F8 /* DJIAircraftAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAircraftAnnotation.m; sourceTree = "<group>"; };
+		65C3D5751C43558600AD50A2 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = "THOR APP/DJISDK.framework"; sourceTree = "<group>"; };
+		65C3D5771C4356D200AD50A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65AC03471C43466700DD51F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65AC03781C43477000DD51F8 /* libstdc++.6.0.9.tbd in Frameworks */,
+				65C3D5761C43558600AD50A2 /* DJISDK.framework in Frameworks */,
+				65AC03761C43475E00DD51F8 /* libz.tbd in Frameworks */,
+				65AC03741C43474100DD51F8 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65AC03601C43466700DD51F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65AC03411C43466700DD51F8 = {
+			isa = PBXGroup;
+			children = (
+				65AC034C1C43466700DD51F8 /* THOR APP */,
+				65AC03661C43466700DD51F8 /* THOR APPTests */,
+				65AC03721C4346F200DD51F8 /* Frameworks */,
+				65AC034B1C43466700DD51F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65AC034B1C43466700DD51F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65AC034A1C43466700DD51F8 /* THOR APP.app */,
+				65AC03631C43466700DD51F8 /* THOR APPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65AC034C1C43466700DD51F8 /* THOR APP */ = {
+			isa = PBXGroup;
+			children = (
+				65AC03501C43466700DD51F8 /* AppDelegate.h */,
+				65AC03511C43466700DD51F8 /* AppDelegate.mm */,
+				65AC03791C4348F000DD51F8 /* DJIRootViewController.h */,
+				65AC037A1C4348F000DD51F8 /* DJIRootViewController.m */,
+				65AC037E1C434A2400DD51F8 /* DJIMapController.h */,
+				65AC037F1C434A2400DD51F8 /* DJIMapController.m */,
+				65AC03811C434AA900DD51F8 /* DJIAircraftAnnotationView.h */,
+				65AC03821C434AA900DD51F8 /* DJIAircraftAnnotationView.m */,
+				65AC03841C434AF300DD51F8 /* DJIAircraftAnnotation.h */,
+				65AC03851C434AF300DD51F8 /* DJIAircraftAnnotation.m */,
+				65C3D5771C4356D200AD50A2 /* Main.storyboard */,
+				65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */,
+				65AC03591C43466700DD51F8 /* Assets.xcassets */,
+				65AC034D1C43466700DD51F8 /* Supporting Files */,
+			);
+			path = "THOR APP";
+			sourceTree = "<group>";
+		};
+		65AC034D1C43466700DD51F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65AC034E1C43466700DD51F8 /* main.m */,
+				65AC035E1C43466700DD51F8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65AC03661C43466700DD51F8 /* THOR APPTests */ = {
+			isa = PBXGroup;
+			children = (
+				65AC03671C43466700DD51F8 /* THOR_APPTests.m */,
+				65AC03691C43466700DD51F8 /* Info.plist */,
+			);
+			path = "THOR APPTests";
+			sourceTree = "<group>";
+		};
+		65AC03721C4346F200DD51F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65AC03771C43477000DD51F8 /* libstdc++.6.0.9.tbd */,
+				65AC03751C43475E00DD51F8 /* libz.tbd */,
+				65C3D5751C43558600AD50A2 /* DJISDK.framework */,
+				65AC03731C43474100DD51F8 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65AC03491C43466700DD51F8 /* THOR APP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65AC036C1C43466700DD51F8 /* Build configuration list for PBXNativeTarget "THOR APP" */;
+			buildPhases = (
+				65AC03461C43466700DD51F8 /* Sources */,
+				65AC03471C43466700DD51F8 /* Frameworks */,
+				65AC03481C43466700DD51F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "THOR APP";
+			productName = "THOR APP";
+			productReference = 65AC034A1C43466700DD51F8 /* THOR APP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65AC03621C43466700DD51F8 /* THOR APPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65AC036F1C43466700DD51F8 /* Build configuration list for PBXNativeTarget "THOR APPTests" */;
+			buildPhases = (
+				65AC035F1C43466700DD51F8 /* Sources */,
+				65AC03601C43466700DD51F8 /* Frameworks */,
+				65AC03611C43466700DD51F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65AC03651C43466700DD51F8 /* PBXTargetDependency */,
+			);
+			name = "THOR APPTests";
+			productName = "THOR APPTests";
+			productReference = 65AC03631C43466700DD51F8 /* THOR APPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65AC03421C43466700DD51F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Dan Vasilyonok";
+				TargetAttributes = {
+					65AC03491C43466700DD51F8 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = F6D9STT39H;
+					};
+					65AC03621C43466700DD51F8 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = F6D9STT39H;
+						TestTargetID = 65AC03491C43466700DD51F8;
+					};
+				};
+			};
+			buildConfigurationList = 65AC03451C43466700DD51F8 /* Build configuration list for PBXProject "THOR APP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65AC03411C43466700DD51F8;
+			productRefGroup = 65AC034B1C43466700DD51F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65AC03491C43466700DD51F8 /* THOR APP */,
+				65AC03621C43466700DD51F8 /* THOR APPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65AC03481C43466700DD51F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65AC035A1C43466700DD51F8 /* Assets.xcassets in Resources */,
+				65C3D57A1C4356FB00AD50A2 /* LaunchScreen.storyboard in Resources */,
+				65C3D5781C4356D200AD50A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65AC03611C43466700DD51F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65AC03461C43466700DD51F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65AC03861C434AF300DD51F8 /* DJIAircraftAnnotation.m in Sources */,
+				65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */,
+				65AC03831C434AA900DD51F8 /* DJIAircraftAnnotationView.m in Sources */,
+				65AC034F1C43466700DD51F8 /* main.m in Sources */,
+				65AC03801C434A2400DD51F8 /* DJIMapController.m in Sources */,
+				65AC037B1C4348F000DD51F8 /* DJIRootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65AC035F1C43466700DD51F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65AC03681C43466700DD51F8 /* THOR_APPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65AC03651C43466700DD51F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65AC03491C43466700DD51F8 /* THOR APP */;
+			targetProxy = 65AC03641C43466700DD51F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		65AC036A1C43466700DD51F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65AC036B1C43466700DD51F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65AC036D1C43466700DD51F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/THOR",
+					APP,
+					"$(PROJECT_DIR)/THOR",
+					APP,
+				);
+				INFOPLIST_FILE = "THOR APP/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.DV.THOR-APP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		65AC036E1C43466700DD51F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/THOR",
+					APP,
+					"$(PROJECT_DIR)/THOR",
+					APP,
+				);
+				INFOPLIST_FILE = "THOR APP/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.DV.THOR-APP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		65AC03701C43466700DD51F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "THOR APPTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.DV.THOR-APPTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THOR APP.app/THOR APP";
+			};
+			name = Debug;
+		};
+		65AC03711C43466700DD51F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "THOR APPTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.DV.THOR-APPTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THOR APP.app/THOR APP";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65AC03451C43466700DD51F8 /* Build configuration list for PBXProject "THOR APP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65AC036A1C43466700DD51F8 /* Debug */,
+				65AC036B1C43466700DD51F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65AC036C1C43466700DD51F8 /* Build configuration list for PBXNativeTarget "THOR APP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65AC036D1C43466700DD51F8 /* Debug */,
+				65AC036E1C43466700DD51F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65AC036F1C43466700DD51F8 /* Build configuration list for PBXNativeTarget "THOR APPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65AC03701C43466700DD51F8 /* Debug */,
+				65AC03711C43466700DD51F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65AC03421C43466700DD51F8 /* Project object */;
+}
