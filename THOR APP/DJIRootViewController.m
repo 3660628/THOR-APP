@@ -7,9 +7,16 @@
 //
 
 #import "DJIRootViewController.h"
+#import "DJIGSButtonViewController.h"
+#import "DJIWaypointConfigViewController.h"
 
-@interface DJIRootViewController ()
+#define kEnterNaviModeFailedAlertTag 1001
+
+
+@interface DJIRootViewController ()<DJIGSButtonViewControllerDelegate, DJIWaypointConfigViewControllerDelegate>
 @property (nonatomic, assign)BOOL isEditingPoints;
+@property (nonatomic, strong)DJIGSButtonViewController *gsButtonVC;
+@property (nonatomic, strong)DJIWaypointConfigViewController *waypointConfigVC;
 @end
 
 @implementation DJIRootViewController
@@ -26,11 +33,40 @@
 //initialize UI status bar
 -(void)initUI
 {
+    //Initialize Header Drone Status Info
     self.modeLabel.text = @"Mode: N/A";
     self.gpsLabel.text = @"GPS: 0";
     self.vsLabel.text = @"VS: 0.0 M/S";
     self.hsLabel.text = @"HS: 0.0 M/S";
     self.altitudeLabel.text = @"Alt: 0 M";
+    
+    //Initialize Ground Station Button View Controller
+    self.gsButtonVC = [[DJIGSButtonViewController alloc]initWithNibName:@"DJIGSButtonViewController" bundle:[NSBundle mainBundle]];
+    [self.gsButtonVC.view setFrame:CGRectMake(0, self.topBarView.frame.origin.y + self.topBarView.frame.size.height, self.gsButtonVC.view.frame.size.width, self.gsButtonVC.view.frame.size.height)];
+    self.gsButtonVC.delegate = self;
+    [self.view addSubview:self.gsButtonVC.view];
+    
+    //Initialize Waypoint View Controller
+    self.waypointConfigVC = [[DJIWaypointConfigViewController alloc]initWithNibName:@"DJIWaypointConfigViewController" bundle:[NSBundle mainBundle]];
+    self.waypointConfigVC.view.alpha = 0;
+    
+    self.waypointConfigVC.view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
+    
+    CGFloat configVCOriginX = (CGRectGetWidth(self.view.frame) - CGRectGetWidth(self.waypointConfigVC.view.frame))/2;
+    CGFloat configVCOriginY = CGRectGetHeight(self.topBarView.frame) + CGRectGetMinY(self.topBarView.frame) + 8;
+    [self.waypointConfigVC.view setFrame:CGRectMake(configVCOriginX, configVCOriginY, CGRectGetWidth(self.waypointConfigVC.view.frame), CGRectGetHeight(self.waypointConfigVC.view.frame))];
+    
+    //if using an iPAD, center Waypoint View Controller
+    if( [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        self.waypointConfigVC.view.center = self.view.center;
+    }
+    //if using a iPhone, center Waypoint View Controller
+    else if ( [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        self.waypointConfigVC.view.center = self.view.center;
+    }
+    
+    self.waypointConfigVC.delegate = self;
+    [self.view addSubview:self.waypointConfigVC.view];
 }
 
 -(void)initDrone
@@ -81,6 +117,69 @@
     self.mapcontroller = [[DJIMapController alloc]init];
     self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addWaypoints:)];
     [self.mapview addGestureRecognizer:self.tapGesture];
+}
+
+#pragma mark DJIWaypointConfigViewControllerDelegate Methods
+-(void)cancelBtnActionInDJIWaypointConfigViewController:(DJIWaypointConfigViewController *)waypointConfigVC
+{
+    __weak DJIRootViewController *weakSelf = self;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        weakSelf.waypointConfigVC.view.alpha = 0;
+    }];
+    
+}
+
+-(void)finishBtnActionInDJIWaypointConfigViewController:(DJIWaypointConfigViewController *)waypointConfigVC
+{
+    __weak DJIRootViewController *weakSelf = self;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        weakSelf.waypointConfigVC.view.alpha = 0;
+    }];
+}
+
+#pragma mark DJIGSButtonViewController Delegate Methods
+-(void)stopBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    
+}
+-(void)clearBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    [self.mapcontroller cleanAllPointsWithMapView:self.mapview];
+}
+-(void)focusMapBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    [self focusMap];
+}
+-(void)configBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    __weak DJIRootViewController *weakSelf = self;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        weakSelf.waypointConfigVC.view.alpha = 1.0;
+    }];
+}
+-(void)startBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    
+}
+-(void)switchToMode:(DJIGSViewMode)mode inGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    if(mode == DJIGSViewMode_EditMode) {
+        [self focusMap];
+    }
+}
+-(void)addBtn:(UIButton *)button withActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
+{
+    if(self.isEditingPoints) {
+        self.isEditingPoints = NO;
+        [button setTitle:@"Add" forState:UIControlStateNormal];
+    }
+    else {
+        self.isEditingPoints = YES;
+        [button setTitle:@"Finished" forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark DJIAppManagerDelegate Method
@@ -181,7 +280,7 @@
     }
 }
 
--(IBAction)focusMapAction:(id)sender
+-(void)focusMap
 {
     //change to self.droneLocation, when connecting to Drone
     if(CLLocationCoordinate2DIsValid(self.userLocation)) {
@@ -210,19 +309,6 @@
             [self.mapcontroller addPoint:point withMapView:self.mapview];
         }
     }
-}
-
--(IBAction)editButtonAction:(id)sender
-{
-    if(self.isEditingPoints) {
-        [self.mapcontroller cleanAllPointsWithMapView:self.mapview];
-        [self.editBtn setTitle:@"Edit" forState:UIControlStateNormal];
-    }
-    else {
-        [self.editBtn setTitle:@"Reset" forState:UIControlStateNormal];
-    }
-    
-    self.isEditingPoints = !self.isEditingPoints;
 }
 
 #pragma mark MKMapViewDelegate Method

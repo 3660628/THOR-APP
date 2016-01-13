@@ -14,6 +14,8 @@
 @interface DJIRootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, DJIDroneDelegate, DJIMainControllerDelegate, DJIAppManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
+@property (weak, nonatomic) IBOutlet UINavigationBar *topBarView;
+
 @property (nonatomic, strong) CLLocationManager* locationManager;
 @property (nonatomic, assign) CLLocationCoordinate2D userLocation;
 @property (nonatomic, strong) DJIMapController *mapcontroller;
@@ -32,13 +34,6 @@
 @property(nonatomic, assign) CLLocationCoordinate2D droneLocation;
 
 @property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
-
-@property (weak, nonatomic) IBOutlet UIButton *editBtn;
-@property (weak, nonatomic) IBOutlet UIButton *focusMap;
-
-
-- (IBAction)editButtonAction:(id)sender;
-- (IBAction)focusMapAction:(id)sender;
 
 
 @end
