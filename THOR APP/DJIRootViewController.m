@@ -82,6 +82,8 @@
     self.phantomMainController = (DJIPhantom3AdvancedMainController *)self.phantomDrone.mainController;
     self.phantomMainController.mcDelegate = self;
     
+    self.waypointMission = self.navigationManager.waypointMission;
+    
     [self registerApp];
     
 }
@@ -137,12 +139,110 @@
     [UIView animateWithDuration:0.25 animations:^{
         weakSelf.waypointConfigVC.view.alpha = 0;
     }];
+    
+    for(int i = 0; i<self.waypointMission.waypointCount; i++) {
+        DJIWaypoint *waypoint = [self.waypointMission waypointAtIndex:i];
+        waypoint.altitude = [self.waypointConfigVC.altitudeTextField.text floatValue];
+    }
+    
+    //Setting entered parameters to be uploaded from WaypointController
+    self.waypointMission.maxFlightSpeed = [self.waypointConfigVC.maxFlightSpeedTextField.text floatValue];
+    self.waypointMission.autoFlightSpeed = [self.waypointConfigVC.autoFlightSpeedTextField.text floatValue];
+    self.waypointMission.headingMode = (DJIWaypointMissionHeadingMode)self.waypointConfigVC.headingSegmentedControl.selectedSegmentIndex;
+    self.waypointMission.finishedAction = (DJIWaypointMissionFinishedAction)self.waypointConfigVC.actionSegmentedControl.selectedSegmentIndex;
+    
+    //
+    if(self.waypointMission.isValid) {
+        if(weakSelf.uploadViewProgress == nil) {
+            weakSelf.uploadViewProgress = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:weakSelf.uploadViewProgress animated:YES completion:nil];
+        }
+        
+        [self.waypointMission setUploadProgressHandler:^(uint8_t progress) {
+            [weakSelf.uploadViewProgress setTitle:@"Mission Uploading"];
+            NSString *message = [NSString stringWithFormat:@"%d%%", progress];
+            [weakSelf.uploadViewProgress setMessage:message];
+        }];
+        
+        [self.waypointMission uploadMissionWithResult:^(DJIError *error) {
+            
+            [weakSelf.uploadViewProgress setTitle:@"Mission Upload Finished"];
+            
+            if(error.errorCode != ERR_Succeeded) {
+                [weakSelf.uploadViewProgress setTitle:@"Mission Invalid"];
+            }
+            
+            [weakSelf.waypointMission setUploadProgressHandler:nil];
+            [weakSelf performSelector:@selector(hideProgressView) withObject:nil afterDelay:3.0];
+            
+            [weakSelf.waypointMission startMissionWithResult:^(DJIError *error) {
+                if(error.errorCode != ERR_Succeeded) {
+                    NSString *message = @"Start Mission Failed";
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Start Mission Failed" message:message preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+                    [alert addAction:okAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+            }];
+            
+        }];
+    }
+    else {
+        UIAlertController *invalidMissionAlert = [UIAlertController alertControllerWithTitle:@"Waypoint Mission Failed" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+        [invalidMissionAlert addAction:okAction];
+        [self presentViewController:invalidMissionAlert animated:YES completion:nil];
+    }
+}
+
+-(void)hideProgressView
+{
+    if(self.uploadViewProgress) {
+        [self.uploadViewProgress dismissViewControllerAnimated:YES completion:nil];
+        self.uploadViewProgress = nil;
+    }
+}
+
+#pragma mark GroundStationDelegate
+-(void) groundStation:(id<DJIGroundStation>)gs didExecuteWithResult:(GroundStationExecuteResult *)result
+{
+    if(result.currentAction == GSActionStart) {
+        if(result.executeStatus == GSExecStatusFailed) {
+            [self hideProgressView];
+            NSLog(@"Mission Start Failed...");
+        }
+    }
+    if(result.currentAction == GSActionUploadTask) {
+        if(result.executeStatus == GSExecStatusFailed) {
+            [self hideProgressView];
+            NSLog(@"Upload Mission Failed");
+        }
+    }
+}
+
+-(void) groundStation:(id<DJIGroundStation>)gs didUploadWaypointMissionWithProgress:(uint8_t)progress
+{
+    if(self.uploadViewProgress == nil) {
+        self.uploadViewProgress = [UIAlertController alertControllerWithTitle:@"Mission Uploading" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:self.uploadViewProgress animated:YES completion:nil];
+    }
+    
+    NSString *message = [NSString stringWithFormat:@"%d%%", progress];
+    [self.uploadViewProgress setMessage:message];
 }
 
 #pragma mark DJIGSButtonViewController Delegate Methods
 -(void)stopBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
 {
-    
+    [self.waypointMission stopMissionWithResult:^(DJIError *error) {
+        if(error == ERR_Succeeded) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Stop Mission Success" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+            handler:^(UIAlertAction * action) {}];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 -(void)clearBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
 {
@@ -156,13 +256,58 @@
 {
     __weak DJIRootViewController *weakSelf = self;
     
+    //waypoints array, from the waypoints places and stored by mapcontroller
+    NSArray *wayPoints = self.mapcontroller.waypoints;
+    
+    if(wayPoints == nil || wayPoints.count < DJIWaypointMissionMinimumWaypointCount) {
+        NSString *message = @"Not enough waypoints for mission";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not enough waypoints for mission" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+    //checks current GPS satellite lock, which is being updated by didUpdateSystemState using the mainController, in a perfect route, GPS satellite count must be 10
+    //only check not in simulation
+//    int satelliteCountBeforeMission = [self.gpsLabel.text intValue];
+//    if(satelliteCountBeforeMission < 6) {
+//        NSString *message = @"Not enough satellites locked in for safe flight";
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not enough satellites locked in for safe flight" message:message preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+//                                                         handler:^(UIAlertAction * action) {}];
+//        [alert addAction:okAction];
+//        [self presentViewController:alert animated:YES completion:nil];
+//        return;
+//    }
+    
+    
     [UIView animateWithDuration:0.25 animations:^{
         weakSelf.waypointConfigVC.view.alpha = 1.0;
     }];
+    
+    [self.waypointMission removeAllWaypoints];
+    
+    for(int i = 0; i<wayPoints.count; i++) {
+        CLLocation *location = [wayPoints objectAtIndex:i];
+        if(CLLocationCoordinate2DIsValid(location.coordinate)) {
+            DJIWaypoint *waypoint = [[DJIWaypoint alloc] initWithCoordinate:location.coordinate];
+            [self.waypointMission addWaypoint:waypoint];
+        }
+    }
 }
 -(void)startBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
 {
-    
+    [self.waypointMission startMissionWithResult:^(DJIError *error) {
+        if(error.errorCode != ERR_Succeeded) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Start Mission Failed" message:error.errorDescription preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+            handler:^(UIAlertAction * action) {}];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 -(void)switchToMode:(DJIGSViewMode)mode inGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
 {

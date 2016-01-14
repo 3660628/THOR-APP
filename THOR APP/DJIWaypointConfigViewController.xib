@@ -20,6 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waypoint Configuration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTT-8R-DBj">
+                    <rect key="frame" x="77" y="8" width="196" height="21"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="N/A" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Me-Wj-fpd">
                     <rect key="frame" x="259" y="57" width="50" height="30"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
@@ -65,7 +71,7 @@
                         <segment title="None"/>
                         <segment title="Go Home"/>
                         <segment title="Landing"/>
-                        <segment title="Back to 1st"/>
+                        <segment title="Backto1st"/>
                         <segment title="Infinite"/>
                     </segments>
                 </segmentedControl>
@@ -75,15 +81,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-tj-Ydb">
-                    <rect key="frame" x="13" y="225" width="325" height="29"/>
-                    <segments>
-                        <segment title="Auto"/>
-                        <segment title="Initial"/>
-                        <segment title="RC Control"/>
-                        <segment title="Use Waypoint"/>
-                    </segments>
-                </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsI-pq-PEX">
                     <rect key="frame" x="0.0" y="270" width="175" height="30"/>
                     <color key="backgroundColor" red="0.42091648310677993" green="0.69748232695813117" blue="0.76999998092651367" alpha="1" colorSpace="calibratedRGB"/>
@@ -106,12 +103,15 @@
                         <action selector="finishBtnAction:" destination="-1" eventType="touchUpInside" id="ere-b8-4MX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waypoint Configuration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTT-8R-DBj">
-                    <rect key="frame" x="77" y="8" width="196" height="21"/>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-tj-Ydb">
+                    <rect key="frame" x="13" y="225" width="325" height="29"/>
+                    <segments>
+                        <segment title="Auto"/>
+                        <segment title="Initial"/>
+                        <segment title="RC Control"/>
+                        <segment title="UseWaypoint"/>
+                    </segments>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="0.22516695713367615" green="0.83623064911386313" blue="0.73942522643786235" alpha="0.75301972517730498" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

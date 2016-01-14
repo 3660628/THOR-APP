@@ -17,7 +17,7 @@
 
 @end
 
-@interface DJIWaypointConfigViewController : UIViewController
+@interface DJIWaypointConfigViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *altitudeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *autoFlightSpeedTextField;

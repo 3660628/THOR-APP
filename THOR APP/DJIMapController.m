@@ -48,7 +48,7 @@
 
 -(NSArray *)waypoints
 {
-    return self.waypoints;
+    return self.editPoints;
 }
 
 -(void)updateAircraftLocation:(CLLocationCoordinate2D)location withMapview:(MKMapView *)mapView

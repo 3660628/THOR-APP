@@ -27,6 +27,10 @@
 
 -(void)initUI
 {
+    self.altitudeTextField.delegate = self;
+    self.autoFlightSpeedTextField.delegate = self;
+    self.maxFlightSpeedTextField.delegate = self;
+    
     self.altitudeTextField.text = @"100";
     self.autoFlightSpeedTextField.text = @"8";
     self.maxFlightSpeedTextField.text = @"10";
@@ -35,6 +39,13 @@
     [self.actionSegmentedControl setSelectedSegmentIndex:1];
     //set the headingMode to DJIWaypointMissionHeadingAuto
     [self.headingSegmentedControl setSelectedSegmentIndex:0];
+}
+
+#pragma mark UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (IBAction)cancelBtnAction:(id)sender

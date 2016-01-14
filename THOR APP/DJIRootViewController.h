@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DJIMapController.h"
 
-@interface DJIRootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, DJIDroneDelegate, DJIMainControllerDelegate, DJIAppManagerDelegate>
+@interface DJIRootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, DJIDroneDelegate, DJIMainControllerDelegate, DJIAppManagerDelegate, GroundStationDelegate, DJINavigationDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
 @property (weak, nonatomic) IBOutlet UINavigationBar *topBarView;
@@ -19,9 +19,12 @@
 @property (nonatomic, strong) CLLocationManager* locationManager;
 @property (nonatomic, assign) CLLocationCoordinate2D userLocation;
 @property (nonatomic, strong) DJIMapController *mapcontroller;
+@property(nonatomic, assign) CLLocationCoordinate2D droneLocation;
+@property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
 
 //status bar labels
 @property (nonatomic, strong) IBOutlet UILabel *modeLabel;
+//gpsLabel measures amount of satellites locked in
 @property (nonatomic, strong) IBOutlet UILabel *gpsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *hsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *vsLabel;
@@ -29,12 +32,10 @@
 
 @property(nonatomic, strong) DJIDrone *phantomDrone;
 @property(nonatomic, strong) DJIPhantom3AdvancedMainController *phantomMainController;
+
 @property(nonatomic, weak) NSObject<DJINavigation> *navigationManager;
-
-@property(nonatomic, assign) CLLocationCoordinate2D droneLocation;
-
-@property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
-
+@property(nonatomic, weak) NSObject<DJIWaypointMission> *waypointMission;
+@property(nonatomic, strong) UIAlertController *uploadViewProgress;
 
 @end
 
