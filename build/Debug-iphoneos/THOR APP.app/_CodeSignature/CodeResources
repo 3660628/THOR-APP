@@ -14,7 +14,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		HpoGBk5T6sa8KsRW39rIzHypZbQ=
+		Fmeu059nVlDsztc7vLjMZuP1c3E=
 		</data>
 		<key>DJIGSButtonViewController.nib</key>
 		<data>
@@ -34,15 +34,23 @@
 		</data>
 		<key>Main.storyboardc/4IP-eb-ju4-view-eex-sM-eGx.nib</key>
 		<data>
-		rdgKGS+KeYO7IioS7Le3wW5PVnI=
+		BYZTlSY/CFwngXPJk9SiohLCXYQ=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
-		UIdCXonUaNdqoCHv2yFfXVpfdLQ=
+		IWIb411HuHGePAx75SDyISx/FjQ=
 		</data>
-		<key>Main.storyboardc/UIViewController-4IP-eb-ju4.nib</key>
+		<key>Main.storyboardc/RDD-US-vLh-view-GJn-5D-qpk.nib</key>
 		<data>
-		OYpAwSf3FuvXmWjsXTLUNrRt0PY=
+		8ZW2xyqU0pKYOG17VPB0roJt5sk=
+		</data>
+		<key>Main.storyboardc/UINavigationController-eFw-Vd-oOV.nib</key>
+		<data>
+		UKJOnFmSKR/ebxKW0yuF0kQcYss=
+		</data>
+		<key>Main.storyboardc/UIViewController-RDD-US-vLh.nib</key>
+		<data>
+		nC0eq/sFLszNhYcwGU3poxhaVsc=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -65,7 +73,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		HpoGBk5T6sa8KsRW39rIzHypZbQ=
+		Fmeu059nVlDsztc7vLjMZuP1c3E=
 		</data>
 		<key>DJIGSButtonViewController.nib</key>
 		<data>
@@ -81,15 +89,23 @@
 		</data>
 		<key>Main.storyboardc/4IP-eb-ju4-view-eex-sM-eGx.nib</key>
 		<data>
-		rdgKGS+KeYO7IioS7Le3wW5PVnI=
+		BYZTlSY/CFwngXPJk9SiohLCXYQ=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
-		UIdCXonUaNdqoCHv2yFfXVpfdLQ=
+		IWIb411HuHGePAx75SDyISx/FjQ=
 		</data>
-		<key>Main.storyboardc/UIViewController-4IP-eb-ju4.nib</key>
+		<key>Main.storyboardc/RDD-US-vLh-view-GJn-5D-qpk.nib</key>
 		<data>
-		OYpAwSf3FuvXmWjsXTLUNrRt0PY=
+		8ZW2xyqU0pKYOG17VPB0roJt5sk=
+		</data>
+		<key>Main.storyboardc/UINavigationController-eFw-Vd-oOV.nib</key>
+		<data>
+		UKJOnFmSKR/ebxKW0yuF0kQcYss=
+		</data>
+		<key>Main.storyboardc/UIViewController-RDD-US-vLh.nib</key>
+		<data>
+		nC0eq/sFLszNhYcwGU3poxhaVsc=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>

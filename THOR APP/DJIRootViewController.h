@@ -21,6 +21,7 @@
 @property (nonatomic, strong) DJIMapController *mapcontroller;
 @property(nonatomic, assign) CLLocationCoordinate2D droneLocation;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
+@property (atomic) DJIGpsSignalLevel gpsSignalLevel;
 
 //status bar labels
 @property (nonatomic, strong) IBOutlet UILabel *modeLabel;
@@ -29,6 +30,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *hsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *vsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *altitudeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *batteryLabel;
 
 @property(nonatomic, strong) DJIDrone *phantomDrone;
 @property(nonatomic, strong) DJIPhantom3AdvancedMainController *phantomMainController;

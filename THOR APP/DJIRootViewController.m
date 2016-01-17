@@ -30,6 +30,27 @@
     [self initDrone];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //Before view appears, must initialize location manager
+    [self startUpdateLocation];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.locationManager stopUpdatingLocation];
+    
+    [self.phantomDrone.mainController stopUpdateMCSystemState];
+    [self.phantomDrone disconnectToDrone];
+}
+
+-(void)registerApp
+{
+    //regesiter succeeded
+    NSString *appKey = @"ae1ba4d5b0c6ce707e4ecc6d";
+    [DJIAppManager registerApp:appKey withDelegate:self];
+}
+
 //initialize UI status bar
 -(void)initUI
 {
@@ -39,6 +60,7 @@
     self.vsLabel.text = @"VS: 0.0 M/S";
     self.hsLabel.text = @"HS: 0.0 M/S";
     self.altitudeLabel.text = @"Alt: 0 M";
+    self.batteryLabel.text = @"Power Level: ?";
     
     //Initialize Ground Station Button View Controller
     self.gsButtonVC = [[DJIGSButtonViewController alloc]initWithNibName:@"DJIGSButtonViewController" bundle:[NSBundle mainBundle]];
@@ -69,6 +91,18 @@
     [self.view addSubview:self.waypointConfigVC.view];
 }
 
+-(void)initData
+{
+    self.mapview.delegate = self;
+    
+    self.droneLocation = kCLLocationCoordinate2DInvalid;
+    self.userLocation = kCLLocationCoordinate2DInvalid;
+    
+    self.mapcontroller = [[DJIMapController alloc]init];
+    self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addWaypoints:)];
+    [self.mapview addGestureRecognizer:self.tapGesture];
+}
+
 -(void)initDrone
 {
     //test when connecting to Drone simulation and drone
@@ -86,39 +120,6 @@
     
     [self registerApp];
     
-}
-
--(void)registerApp
-{
-    //regesiter succeeded
-    NSString *appKey = @"ae1ba4d5b0c6ce707e4ecc6d";
-    [DJIAppManager registerApp:appKey withDelegate:self];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    //Before view appears, must initialize location manager
-    [self startUpdateLocation];
-}
-
--(void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.locationManager stopUpdatingLocation];
-    
-    [self.phantomDrone.mainController stopUpdateMCSystemState];
-    [self.phantomDrone disconnectToDrone];
-}
-
--(void)initData
-{
-    self.mapview.delegate = self;
-    
-    self.droneLocation = kCLLocationCoordinate2DInvalid;
-    self.userLocation = kCLLocationCoordinate2DInvalid;
-    
-    self.mapcontroller = [[DJIMapController alloc]init];
-    self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addWaypoints:)];
-    [self.mapview addGestureRecognizer:self.tapGesture];
 }
 
 #pragma mark DJIWaypointConfigViewControllerDelegate Methods
@@ -140,18 +141,23 @@
         weakSelf.waypointConfigVC.view.alpha = 0;
     }];
     
+    //enter in constant altitude that was entered in WaypointVC in for all the waypoints on mission
     for(int i = 0; i<self.waypointMission.waypointCount; i++) {
         DJIWaypoint *waypoint = [self.waypointMission waypointAtIndex:i];
         waypoint.altitude = [self.waypointConfigVC.altitudeTextField.text floatValue];
     }
     
-    //Setting entered parameters to be uploaded from WaypointController
+    //Setting entered parameters to be uploaded from WaypointController into a "WaypointMission"
+    //Waypoint Missions are uploaded to drone
     self.waypointMission.maxFlightSpeed = [self.waypointConfigVC.maxFlightSpeedTextField.text floatValue];
     self.waypointMission.autoFlightSpeed = [self.waypointConfigVC.autoFlightSpeedTextField.text floatValue];
     self.waypointMission.headingMode = (DJIWaypointMissionHeadingMode)self.waypointConfigVC.headingSegmentedControl.selectedSegmentIndex;
     self.waypointMission.finishedAction = (DJIWaypointMissionFinishedAction)self.waypointConfigVC.actionSegmentedControl.selectedSegmentIndex;
     
-    //
+    //Enter in action (take picture) linked with each waypoint
+    
+    
+    
     if(self.waypointMission.isValid) {
         if(weakSelf.uploadViewProgress == nil) {
             weakSelf.uploadViewProgress = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -252,6 +258,8 @@
 {
     [self focusMap];
 }
+
+//Config launches view to enter parameters for the upcoming waypoint mission
 -(void)configBtnActionInGSButtonVC:(DJIGSButtonViewController *)GSBtnVC
 {
     __weak DJIRootViewController *weakSelf = self;
@@ -269,18 +277,35 @@
         return;
     }
     
-    //checks current GPS satellite lock, which is being updated by didUpdateSystemState using the mainController, in a perfect route, GPS satellite count must be 10
-    //only check not in simulation
-//    int satelliteCountBeforeMission = [self.gpsLabel.text intValue];
-//    if(satelliteCountBeforeMission < 6) {
-//        NSString *message = @"Not enough satellites locked in for safe flight";
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not enough satellites locked in for safe flight" message:message preferredStyle:UIAlertControllerStyleAlert];
-//        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-//                                                         handler:^(UIAlertAction * action) {}];
-//        [alert addAction:okAction];
-//        [self presentViewController:alert animated:YES completion:nil];
-//        return;
-//    }
+    /***********
+     Safety Checks before takeoff/User can enter flight parameters
+     1. Must have greater than 6 satellites locked in
+     2. GPS Signal should be 2 or above in order for it to go home after mission is finished
+     //Change to check actual power level state
+     //also use battery level functions
+     ********/
+    
+    /**********
+  
+    int satelliteCountBeforeMission = [self.gpsLabel.text intValue];
+    if(satelliteCountBeforeMission < 6) {
+        NSString *message = @"Not enough satellites locked in for safe flight";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not enough satellites locked in for safe flight" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+    if(self.gpsSignalLevel == GpsSignalLevel0 && self.gpsSignalLevel == GpsSignalLevel1) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Weak GPS Signal" message:@"Retry when stronger signal" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+     ************/
     
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -359,6 +384,8 @@
     self.vsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", state.velocityZ];
     self.hsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", (sqrtf(state.velocityX*state.velocityX + state.velocityY*state.velocityY))];
     self.altitudeLabel.text = [NSString stringWithFormat:@"%0.1f M", state.altitude];
+    self.batteryLabel.text = [NSString stringWithFormat:@"%0d", state.powerLevel];
+    self.gpsSignalLevel = state.gpsSignalLevel;
     
     [self.mapcontroller updateAircraftLocation:self.droneLocation withMapview:self.mapview];
     double radianYaw = (state.attitude.yaw * M_PI/180);
@@ -393,6 +420,14 @@
 {
     if(status == ConnectionSucceeded) {
         [self enterNavigationMode];
+    }
+    else if (status == ConnectionFailed ) {
+        NSString *message = @"Connection Failed";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Connection to Drone" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -462,7 +497,7 @@
     if([annotation isKindOfClass:[MKPointAnnotation class]]) {
         MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin_Annotation"];
         pinView.pinTintColor = [UIColor purpleColor];
-        return  pinView;
+        return pinView;
         
     }
     //if its a DJIAnnotation, make it the aircraft image

@@ -25,6 +25,7 @@
 		65C3D5861C45650A00AD50A2 /* DJIGSButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5841C45650A00AD50A2 /* DJIGSButtonViewController.xib */; };
 		65C3D58A1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5881C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m */; };
 		65C3D58B1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5891C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib */; };
+		65C3D58F1C4AE17400AD50A2 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		65C3D5871C45BB9A00AD50A2 /* DJIWaypointConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIWaypointConfigViewController.h; sourceTree = "<group>"; };
 		65C3D5881C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIWaypointConfigViewController.m; sourceTree = "<group>"; };
 		65C3D5891C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DJIWaypointConfigViewController.xib; sourceTree = "<group>"; };
+		65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				65C3D5831C45650A00AD50A2 /* DJIGSButtonViewController.m */,
 				65C3D5841C45650A00AD50A2 /* DJIGSButtonViewController.xib */,
 				65C3D5771C4356D200AD50A2 /* Main.storyboard */,
+				65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */,
+				65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */,
 				65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */,
 				65AC03591C43466700DD51F8 /* Assets.xcassets */,
 				65AC034D1C43466700DD51F8 /* Supporting Files */,
@@ -276,6 +281,7 @@
 				65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */,
 				65AC03831C434AA900DD51F8 /* DJIAircraftAnnotationView.m in Sources */,
 				65AC034F1C43466700DD51F8 /* main.m in Sources */,
+				65C3D58F1C4AE17400AD50A2 /* ImageViewController.m in Sources */,
 				65AC03801C434A2400DD51F8 /* DJIMapController.m in Sources */,
 				65AC037B1C4348F000DD51F8 /* DJIRootViewController.m in Sources */,
 			);
