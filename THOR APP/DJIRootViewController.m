@@ -9,6 +9,7 @@
 #import "DJIRootViewController.h"
 #import "DJIGSButtonViewController.h"
 #import "DJIWaypointConfigViewController.h"
+#import "ImageViewController.h"
 
 #define kEnterNaviModeFailedAlertTag 1001
 
@@ -64,7 +65,7 @@
     
     //Initialize Ground Station Button View Controller
     self.gsButtonVC = [[DJIGSButtonViewController alloc]initWithNibName:@"DJIGSButtonViewController" bundle:[NSBundle mainBundle]];
-    [self.gsButtonVC.view setFrame:CGRectMake(0, self.topBarView.frame.origin.y + self.topBarView.frame.size.height, self.gsButtonVC.view.frame.size.width, self.gsButtonVC.view.frame.size.height)];
+    [self.gsButtonVC.view setFrame:CGRectMake(0, self.topBarView.frame.origin.y + self.topBarView.frame.size.height + 260, self.gsButtonVC.view.frame.size.width, self.gsButtonVC.view.frame.size.height)];
     self.gsButtonVC.delegate = self;
     [self.view addSubview:self.gsButtonVC.view];
     
@@ -89,11 +90,23 @@
     
     self.waypointConfigVC.delegate = self;
     [self.view addSubview:self.waypointConfigVC.view];
+    
+    //Edit top nav bar and status labels
+    UIColor *myColorBlue = [UIColor colorWithRed:45/255.0 green:188/255.0 blue:220/255.0 alpha:1.0];
+    self.topBarView.barTintColor = myColorBlue;
+    self.modeLabel.textColor = [UIColor whiteColor];
+    self.gpsLabel.textColor = [UIColor whiteColor];
+    self.hsLabel.textColor = [UIColor whiteColor];
+    self.vsLabel.textColor = [UIColor whiteColor];
+    self.altitudeLabel.textColor = [UIColor whiteColor];
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thorbar.png"]];
+    
 }
 
 -(void)initData
 {
     self.mapview.delegate = self;
+    self.mapview.mapType = MKMapTypeSatellite;
     
     self.droneLocation = kCLLocationCoordinate2DInvalid;
     self.userLocation = kCLLocationCoordinate2DInvalid;
@@ -107,13 +120,13 @@
 {
     //test when connecting to Drone simulation and drone
     
-    self.phantomDrone = [[DJIDrone alloc]initWithType:DJIDrone_Phantom3Advanced];
+    self.phantomDrone = [[DJIDrone alloc]initWithType:DJIDrone_Phantom3Professional];
     self.phantomDrone.delegate = self;
     
     self.navigationManager = self.phantomDrone.mainController.navigationManager;
     self.navigationManager.delegate = self;
     
-    self.phantomMainController = (DJIPhantom3AdvancedMainController *)self.phantomDrone.mainController;
+    self.phantomMainController = (DJIPhantom3ProMainController *)self.phantomDrone.mainController;
     self.phantomMainController.mcDelegate = self;
     
     self.waypointMission = self.navigationManager.waypointMission;
@@ -281,14 +294,14 @@
      Safety Checks before takeoff/User can enter flight parameters
      1. Must have greater than 6 satellites locked in
      2. GPS Signal should be 2 or above in order for it to go home after mission is finished
-     //Change to check actual power level state
-     //also use battery level functions
+     
+     //also use battery level functions to check if adequete
+     //Check if battery level is enough for current selected distance
+     //%battery per meter metric needed
      ********/
     
-    /**********
-  
-    int satelliteCountBeforeMission = [self.gpsLabel.text intValue];
-    if(satelliteCountBeforeMission < 6) {
+    /***
+    if(self.gpsSatelliteCount < 6) {
         NSString *message = @"Not enough satellites locked in for safe flight";
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not enough satellites locked in for safe flight" message:message preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -305,7 +318,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-     ************/
+     ***/
     
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -362,6 +375,9 @@
     else {
         [self.phantomDrone connectToDrone];
         [self.phantomDrone.mainController startUpdateMCSystemState];
+        
+        ImageViewController *cam = [[ImageViewController alloc]init];
+        [cam.camera startCameraSystemStateUpdates];
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Register App" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -381,6 +397,7 @@
     
     self.modeLabel.text = state.flightModeString;
     self.gpsLabel.text = [NSString stringWithFormat:@"%d", state.satelliteCount];
+    self.gpsSatelliteCount = state.satelliteCount;
     self.vsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", state.velocityZ];
     self.hsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", (sqrtf(state.velocityX*state.velocityX + state.velocityY*state.velocityY))];
     self.altitudeLabel.text = [NSString stringWithFormat:@"%0.1f M", state.altitude];
@@ -392,15 +409,19 @@
     [self.mapcontroller updateAircraftHeading:radianYaw];
 }
 
+
 -(void)enterNavigationMode
 {
     [self.navigationManager enterNavigationModeWithResult:^(DJIError *error) {
         if(error.errorCode != ERR_Succeeded) {
             NSString *message = [NSString stringWithFormat:@"Enter Navigation Mode Failed:%@", error.errorDescription];
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Enter Navigation Mode" message:message preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                             handler:^(UIAlertAction * action) {}];
-            [alert addAction:okAction];
+            UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+                [self enterNavigationMode];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}];
+            [alert addAction:retryAction];
+            [alert addAction:cancelAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else {
@@ -410,12 +431,12 @@
                                                              handler:^(UIAlertAction * action) {}];
             [alert addAction:okAction];
             [self presentViewController:alert animated:YES completion:nil];
-            [self enterNavigationMode];
         }
     }];
 }
 
 #pragma mark DJIDroneDelegate Method
+//add more detailed connection info
 -(void) droneOnConnectionStatusChanged:(DJIConnectionStatus)status
 {
     if(status == ConnectionSucceeded) {
@@ -494,9 +515,10 @@
 #pragma mark MKMapViewDelegate Method
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+    UIColor *myColorBlue = [UIColor colorWithRed:45/255.0 green:188/255.0 blue:220/255.0 alpha:1.0];
     if([annotation isKindOfClass:[MKPointAnnotation class]]) {
         MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin_Annotation"];
-        pinView.pinTintColor = [UIColor purpleColor];
+        pinView.pinTintColor = myColorBlue;
         return pinView;
         
     }

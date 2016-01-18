@@ -14,7 +14,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		Fmeu059nVlDsztc7vLjMZuP1c3E=
+		XbYeeGZTHMcLA1pz50AJRoeZlvo=
 		</data>
 		<key>DJIGSButtonViewController.nib</key>
 		<data>
@@ -24,9 +24,49 @@
 		<data>
 		GtbPn6A66QtCxWPEuS0D7I77YoA=
 		</data>
+		<key>Frameworks/libswiftContacts.dylib</key>
+		<data>
+		90vpqci0TuyWs9bUqFsYqm/X7ds=
+		</data>
+		<key>Frameworks/libswiftCore.dylib</key>
+		<data>
+		5YhG1r9vr55+a5OI782tmFgb+xI=
+		</data>
+		<key>Frameworks/libswiftCoreGraphics.dylib</key>
+		<data>
+		8KZTHFX85DVuLUhZIkkIhLLf1uk=
+		</data>
+		<key>Frameworks/libswiftCoreImage.dylib</key>
+		<data>
+		uszPQzo2YyhctyL604b5VvjCoaQ=
+		</data>
+		<key>Frameworks/libswiftCoreLocation.dylib</key>
+		<data>
+		Kyq2w6aYu6FNLdk7yMzzY/RT1yg=
+		</data>
+		<key>Frameworks/libswiftDarwin.dylib</key>
+		<data>
+		J+6JQDAXBBv21WYP+qYc9oJ/+z4=
+		</data>
+		<key>Frameworks/libswiftDispatch.dylib</key>
+		<data>
+		bYhd+NsrnAZfMUGHDgsQoxHa8IM=
+		</data>
+		<key>Frameworks/libswiftFoundation.dylib</key>
+		<data>
+		ZN/LIwq5eqCmkhqOmrodqjqWgcA=
+		</data>
+		<key>Frameworks/libswiftObjectiveC.dylib</key>
+		<data>
+		STrcvMyJq8NL7DvJuyAJWD03et8=
+		</data>
+		<key>Frameworks/libswiftUIKit.dylib</key>
+		<data>
+		UkMP8iismuKIrOslF/4pgA3gavw=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		In2pNowkKIntPsWeFtwlSXRHbfo=
+		WIeoW5URuOXWug8gv7OrkhRnzUo=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -34,7 +74,7 @@
 		</data>
 		<key>Main.storyboardc/4IP-eb-ju4-view-eex-sM-eGx.nib</key>
 		<data>
-		BYZTlSY/CFwngXPJk9SiohLCXYQ=
+		pgAZ71wHZrf6JG6f+XhyaEDJkKQ=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
@@ -42,15 +82,15 @@
 		</data>
 		<key>Main.storyboardc/RDD-US-vLh-view-GJn-5D-qpk.nib</key>
 		<data>
-		8ZW2xyqU0pKYOG17VPB0roJt5sk=
+		GZuzkev9EkcPZQolvd1ibAfvsqQ=
 		</data>
 		<key>Main.storyboardc/UINavigationController-eFw-Vd-oOV.nib</key>
 		<data>
-		UKJOnFmSKR/ebxKW0yuF0kQcYss=
+		kgYb2/Q8mEH9bbnsNf84qYC0xeA=
 		</data>
 		<key>Main.storyboardc/UIViewController-RDD-US-vLh.nib</key>
 		<data>
-		nC0eq/sFLszNhYcwGU3poxhaVsc=
+		YyQ0CHjWpNqTkybIY6nFvyv3aLc=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -73,7 +113,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		Fmeu059nVlDsztc7vLjMZuP1c3E=
+		XbYeeGZTHMcLA1pz50AJRoeZlvo=
 		</data>
 		<key>DJIGSButtonViewController.nib</key>
 		<data>
@@ -83,13 +123,53 @@
 		<data>
 		GtbPn6A66QtCxWPEuS0D7I77YoA=
 		</data>
+		<key>Frameworks/libswiftContacts.dylib</key>
+		<data>
+		90vpqci0TuyWs9bUqFsYqm/X7ds=
+		</data>
+		<key>Frameworks/libswiftCore.dylib</key>
+		<data>
+		5YhG1r9vr55+a5OI782tmFgb+xI=
+		</data>
+		<key>Frameworks/libswiftCoreGraphics.dylib</key>
+		<data>
+		8KZTHFX85DVuLUhZIkkIhLLf1uk=
+		</data>
+		<key>Frameworks/libswiftCoreImage.dylib</key>
+		<data>
+		uszPQzo2YyhctyL604b5VvjCoaQ=
+		</data>
+		<key>Frameworks/libswiftCoreLocation.dylib</key>
+		<data>
+		Kyq2w6aYu6FNLdk7yMzzY/RT1yg=
+		</data>
+		<key>Frameworks/libswiftDarwin.dylib</key>
+		<data>
+		J+6JQDAXBBv21WYP+qYc9oJ/+z4=
+		</data>
+		<key>Frameworks/libswiftDispatch.dylib</key>
+		<data>
+		bYhd+NsrnAZfMUGHDgsQoxHa8IM=
+		</data>
+		<key>Frameworks/libswiftFoundation.dylib</key>
+		<data>
+		ZN/LIwq5eqCmkhqOmrodqjqWgcA=
+		</data>
+		<key>Frameworks/libswiftObjectiveC.dylib</key>
+		<data>
+		STrcvMyJq8NL7DvJuyAJWD03et8=
+		</data>
+		<key>Frameworks/libswiftUIKit.dylib</key>
+		<data>
+		UkMP8iismuKIrOslF/4pgA3gavw=
+		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
 		GnMdGFfDuvwAuWJN7FS9ELLozY4=
 		</data>
 		<key>Main.storyboardc/4IP-eb-ju4-view-eex-sM-eGx.nib</key>
 		<data>
-		BYZTlSY/CFwngXPJk9SiohLCXYQ=
+		pgAZ71wHZrf6JG6f+XhyaEDJkKQ=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
@@ -97,15 +177,15 @@
 		</data>
 		<key>Main.storyboardc/RDD-US-vLh-view-GJn-5D-qpk.nib</key>
 		<data>
-		8ZW2xyqU0pKYOG17VPB0roJt5sk=
+		GZuzkev9EkcPZQolvd1ibAfvsqQ=
 		</data>
 		<key>Main.storyboardc/UINavigationController-eFw-Vd-oOV.nib</key>
 		<data>
-		UKJOnFmSKR/ebxKW0yuF0kQcYss=
+		kgYb2/Q8mEH9bbnsNf84qYC0xeA=
 		</data>
 		<key>Main.storyboardc/UIViewController-RDD-US-vLh.nib</key>
 		<data>
-		nC0eq/sFLszNhYcwGU3poxhaVsc=
+		YyQ0CHjWpNqTkybIY6nFvyv3aLc=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>

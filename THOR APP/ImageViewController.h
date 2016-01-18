@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DJISDK/DJISDK.h>
 
 @interface ImageViewController : UIViewController
 
 
 @property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
 
-@property(strong,nonatomic) NSMutableArray *imageArray;
-
-
 -(IBAction)onDownloadButtonClicked:(id)sender;
+
+@property (strong, nonatomic) DJIPhantom3ProCamera *camera;
+@property(strong,nonatomic) NSMutableArray *imageArray;
+@property(strong,nonatomic) UIAlertController *downloadProgressAlert;
 
 
 @end

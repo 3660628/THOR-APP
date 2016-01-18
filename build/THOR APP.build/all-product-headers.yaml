@@ -1,0 +1,28 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/build/Debug-iphoneos/THOR APP.app/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "THOR_APP-Swift.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/build/Debug-iphoneos/THOR APP.app/Headers/THOR_APP-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/build/Debug-iphoneos/THOR APP.app/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/build/THOR APP.build/Debug-iphoneos/THOR APP.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "2cecef528cd6fd2a4a91f3f734bb863e"
+build_time: [506366516, 602064000]
+inputs:
+  "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/THOR APP/ModifyUI.swift": [506366466, 0]

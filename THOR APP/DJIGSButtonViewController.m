@@ -16,12 +16,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initButtonUI];
+    
     [self setMode:DJIGSViewMode_ViewMode];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)initButtonUI
+{
+    //Edit Buttons
+    UIColor *myColorGreen = [UIColor colorWithRed:104/255.0 green:175/255.0 blue:97/255.0 alpha:1.0];
+    self.editBtn.backgroundColor = myColorGreen;
+    [self.editBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.focusMapBtn.backgroundColor = myColorGreen;
+    [self.focusMapBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.backBtn.backgroundColor = myColorGreen;
+    [self.backBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.addBtn.backgroundColor = myColorGreen;
+    [self.addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.clearBtn.backgroundColor = myColorGreen;
+    [self.clearBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.configBtn.backgroundColor = myColorGreen;
+    [self.configBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.startBtn.backgroundColor = myColorGreen;
+    [self.startBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.stopBtn.backgroundColor = myColorGreen;
+    [self.stopBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 #pragma mark Property Method

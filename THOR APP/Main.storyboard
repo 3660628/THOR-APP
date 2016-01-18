@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G31-ec-2lq">
-                                <rect key="frame" x="0.0" y="64" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="59" width="600" height="561"/>
                                 <connections>
                                     <outlet property="delegate" destination="4IP-eb-ju4" id="ChO-VL-8fF"/>
                                 </connections>
                             </mapView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gd-W6-mTe" userLabel="top bar">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gd-W6-mTe" userLabel="top bar">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <connections>
                                     <outlet property="delegate" destination="4IP-eb-ju4" id="mu5-Bc-rXv"/>
@@ -60,19 +60,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Power Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-Kr-NjZ">
-                                <rect key="frame" x="273" y="116" width="128" height="31"/>
+                                <rect key="frame" x="9" y="114" width="128" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3s2-O6-hPq" firstAttribute="top" secondItem="G31-ec-2lq" secondAttribute="bottom" id="PtO-2m-YDR"/>
+                            <constraint firstItem="3s2-O6-hPq" firstAttribute="top" secondItem="G31-ec-2lq" secondAttribute="bottom" id="4u2-ah-k74"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="THOR" id="YQx-aB-nju">
-                        <barButtonItem key="rightBarButtonItem" title="View Images" id="LSN-8O-xyf">
+                    <navigationItem key="navigationItem" id="YQx-aB-nju">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="LSN-8O-xyf">
+                            <color key="tintColor" red="0.42091648310000002" green="0.69748232700000001" blue="0.76999998089999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="RDD-US-vLh" kind="show" identifier="ViewImages" id="VNc-eO-1Zb"/>
                             </connections>
@@ -106,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-dB-7Qx">
-                                <rect key="frame" x="0.0" y="64" width="119" height="77"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="77"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <state key="normal" title="Download">
@@ -119,7 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Images" id="7pc-TC-BF3"/>
+                    <navigationItem key="navigationItem" id="7pc-TC-BF3"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
