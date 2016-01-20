@@ -29,6 +29,7 @@
     [self initUI];
     [self initData];
     [self initDrone];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -131,6 +132,9 @@
     
     self.waypointMission = self.navigationManager.waypointMission;
     
+    self.cameraMain = (DJIPhantom3ProCamera *)_phantomDrone.camera;
+    self.cameraMain.delegate = self;
+    
     [self registerApp];
     
 }
@@ -154,6 +158,8 @@
         weakSelf.waypointConfigVC.view.alpha = 0;
     }];
     
+    
+    
     //enter in constant altitude that was entered in WaypointVC in for all the waypoints on mission
     for(int i = 0; i<self.waypointMission.waypointCount; i++) {
         DJIWaypoint *waypoint = [self.waypointMission waypointAtIndex:i];
@@ -164,11 +170,25 @@
     //Waypoint Missions are uploaded to drone
     self.waypointMission.maxFlightSpeed = [self.waypointConfigVC.maxFlightSpeedTextField.text floatValue];
     self.waypointMission.autoFlightSpeed = [self.waypointConfigVC.autoFlightSpeedTextField.text floatValue];
+    
+    //Heading Mode during mission
     self.waypointMission.headingMode = (DJIWaypointMissionHeadingMode)self.waypointConfigVC.headingSegmentedControl.selectedSegmentIndex;
+    
+    //Should select Go Home or None right now
     self.waypointMission.finishedAction = (DJIWaypointMissionFinishedAction)self.waypointConfigVC.actionSegmentedControl.selectedSegmentIndex;
     
-    //Enter in action (take picture) linked with each waypoint
+    //The drone will move from waypoint to waypoint in a straight line
+    self.waypointMission.flightPathMode = DJIWaypointMissionFlightPathNormal;
     
+    //Enter in action (take picture) linked with each waypoint add to waypoint mission
+    //Take picture at every waypoint set
+    for(int i = 0; i<self.waypointMission.waypointCount; i++) {
+        DJIWaypointAction *snapPicture = [[DJIWaypointAction alloc]initWithActionType:DJIWaypointActionStartTakePhoto param:0];
+        DJIWaypoint *waypoint = [self.waypointMission waypointAtIndex:i];
+        [waypoint addAction:snapPicture];
+    }
+    
+    //Should store waypoint missions between sessions, this way we can find the optimal mission for image stitching, and then load that mission, NSMutable Array
     
     
     if(self.waypointMission.isValid) {
@@ -221,6 +241,14 @@
         self.uploadViewProgress = nil;
     }
 }
+
+#pragma  mark CameraDelegate Methods
+-(void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState
+{
+    
+}
+
+
 
 #pragma mark GroundStationDelegate
 -(void) groundStation:(id<DJIGroundStation>)gs didExecuteWithResult:(GroundStationExecuteResult *)result
@@ -375,9 +403,7 @@
     else {
         [self.phantomDrone connectToDrone];
         [self.phantomDrone.mainController startUpdateMCSystemState];
-        
-        ImageViewController *cam = [[ImageViewController alloc]init];
-        [cam.camera startCameraSystemStateUpdates];
+        [self.cameraMain startCameraSystemStateUpdates];
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Register App" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -489,7 +515,6 @@
         region.center = self.userLocation;
         region.span.latitudeDelta = 0.001;
         region.span.longitudeDelta = 0.001;
-        
         [self.mapview setRegion:region animated:YES];
     }
 }
@@ -507,7 +532,20 @@
     CGPoint point = [tapGesture locationInView:self.mapview];
     if(tapGesture.state == UIGestureRecognizerStateEnded) {
         if(self.isEditingPoints) {
-            [self.mapcontroller addPoint:point withMapView:self.mapview];
+            CLLocationCoordinate2D coordinate = [self.mapview convertPoint:point toCoordinateFromView:self.mapview];
+            CLLocation *location = [[CLLocation alloc]initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+            CLLocation *userLocationTemp = [[CLLocation alloc]initWithLatitude:self.userLocation.latitude longitude:self.userLocation.longitude];
+            CLLocationDistance meters = [location distanceFromLocation:userLocationTemp];
+            //With Wifi extender there is a 2000m range, so do not allow user to place unacceptable waypoints that would cause the drone to go out of range
+            if(meters < 1000) {
+                [self.mapcontroller addPoint:point withMapView:self.mapview];
+            }
+            else {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Out of Range" message:@"Pick closer Waypoint" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action ) {}];
+                [alert addAction:okAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }
     }
 }

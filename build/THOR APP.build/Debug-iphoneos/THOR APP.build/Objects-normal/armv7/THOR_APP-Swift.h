@@ -97,7 +97,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC8THOR_APP8ModifyUI")
 @interface ModifyUI : ImageViewController
-- (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

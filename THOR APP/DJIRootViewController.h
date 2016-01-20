@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DJIMapController.h"
 
-@interface DJIRootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, DJIDroneDelegate, DJIMainControllerDelegate, DJIAppManagerDelegate, GroundStationDelegate, DJINavigationDelegate>
+@interface DJIRootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, DJIDroneDelegate, DJIMainControllerDelegate, DJIAppManagerDelegate, GroundStationDelegate, DJINavigationDelegate, DJICameraDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
 @property (weak, nonatomic) IBOutlet UINavigationBar *topBarView;
@@ -35,10 +35,13 @@
 
 @property(nonatomic, strong) DJIDrone *phantomDrone;
 @property(nonatomic, strong) DJIPhantom3ProMainController *phantomMainController;
+@property(nonatomic, strong)DJIPhantom3ProCamera *cameraMain;
 
 @property(nonatomic, weak) NSObject<DJINavigation> *navigationManager;
 @property(nonatomic, weak) NSObject<DJIWaypointMission> *waypointMission;
 @property(nonatomic, strong) UIAlertController *uploadViewProgress;
+
+-(void) startUpdateLocation;
 
 @end
 

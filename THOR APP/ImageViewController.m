@@ -17,13 +17,16 @@
     __block long totalFileSize;
     __block NSString *targetFileName;
 }
-
 @end
 
 @implementation ImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.phantomDroneTwo = [[DJIDrone alloc]initWithType:DJIDrone_Phantom3Professional];
+    self.cameraDownload = (DJIPhantom3ProCamera *)_phantomDroneTwo.camera;
+    self.cameraDownload.delegate = self;
     
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thorbar.png"]];
   
@@ -46,6 +49,7 @@
 }
 
 //Update number of selected Photos
+#pragma  mark DJICameraDelegate
 -(void) camera:(DJICamera *)camera didUpdatePlaybackState:(DJICameraPlaybackState *)playbackState
 {
     _selectedPhotoNumber = playbackState.numbersOfSelected;
@@ -61,7 +65,7 @@
 - (IBAction)onDownloadButtonClicked:(id)sender
 {
     __weak typeof(self) weakSelf = self;
-    [_camera setCameraWorkMode:CameraWorkModePlayback withResult:^(DJIError *error){
+    [_cameraDownload setCameraWorkMode:CameraWorkModePlayback withResult:^(DJIError *error){
         if(error.errorCode == ERR_Succeeded) {
             [weakSelf selectPhotos];
         }
@@ -77,12 +81,12 @@
 -(void)selectPhotos
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.camera enterMultiplePreviewMode];
+        [self.cameraDownload enterMultiplePreviewMode];
         sleep(1);
-        [self.camera enterMultipleEditMode];
+        [self.cameraDownload enterMultipleEditMode];
         sleep(1);
         
-        [self.camera selectAllFilesInPage];
+        [self.cameraDownload selectAllFilesInPage];
         [self downloadPhotos];
     });
 }
@@ -94,7 +98,7 @@
     __block NSTimer *timer;
     _imageArray = [NSMutableArray new];
     
-    [_camera downloadAllSelectedFilesWithPreparingBlock:^(NSString* fileName, DJIDownloadFileType fileType, NSUInteger fileSize, BOOL *skip) {
+    [_cameraDownload downloadAllSelectedFilesWithPreparingBlock:^(NSString* fileName, DJIDownloadFileType fileType, NSUInteger fileSize, BOOL *skip) {
         totalFileSize = (long)fileSize;
         targetFileName = fileName;
         _downloadedFileData = [NSMutableData new];
@@ -115,7 +119,7 @@
             if(finishedFileCount >= _selectedPhotoNumber) {
                 [self.downloadProgressAlert dismissViewControllerAnimated:YES completion:nil];
                 self.downloadProgressAlert = nil;
-                [_camera setCameraWorkMode:CameraWorkModeCapture withResult:nil];
+                [_cameraDownload setCameraWorkMode:CameraWorkModeCapture withResult:nil];
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Download (%d)", finishedFileCount] message:@"download Finished" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
                 [alert addAction:okAction];

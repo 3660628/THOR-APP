@@ -9,7 +9,6 @@
 #import "DJIMapController.h"
 #import "DJIRootViewController.h"
 
-
 @implementation DJIMapController
 
 //initializer will set editPoints mutable array to an empty mutable array
@@ -20,6 +19,8 @@
     }
     return self;
 }
+
+
 
 -(void)addPoint:(CGPoint)point withMapView:(MKMapView *)mapview
 {

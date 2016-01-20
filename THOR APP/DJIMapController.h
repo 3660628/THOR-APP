@@ -31,6 +31,7 @@
 //Update Aircraft's Heading in mapview
 -(void)updateAircraftHeading:(float)heading;
 
+@property (nonatomic, strong) UIViewController *alertController;
 
 
 @end

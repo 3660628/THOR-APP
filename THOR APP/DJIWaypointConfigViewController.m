@@ -31,8 +31,8 @@
     self.autoFlightSpeedTextField.delegate = self;
     self.maxFlightSpeedTextField.delegate = self;
     
-    self.altitudeTextField.text = @"100";
-    self.autoFlightSpeedTextField.text = @"8";
+    self.altitudeTextField.text = @"5";
+    self.autoFlightSpeedTextField.text = @"5";
     self.maxFlightSpeedTextField.text = @"10";
     
     //set finish action to DJIWaypointMissionFinishedGoHome

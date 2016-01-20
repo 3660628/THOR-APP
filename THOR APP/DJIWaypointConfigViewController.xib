@@ -66,13 +66,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RiS-IE-Q3x">
-                    <rect key="frame" x="13" y="160" width="325" height="29"/>
+                    <rect key="frame" x="12" y="160" width="327" height="29"/>
                     <segments>
                         <segment title="None"/>
                         <segment title="Go Home"/>
                         <segment title="Landing"/>
-                        <segment title="Backto1st"/>
-                        <segment title="Infinite"/>
+                        <segment title="Back to 1st"/>
                     </segments>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heading:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9L-Yx-Z9W">
@@ -109,7 +108,6 @@
                         <segment title="Auto"/>
                         <segment title="Initial"/>
                         <segment title="RC Control"/>
-                        <segment title="UseWaypoint"/>
                     </segments>
                 </segmentedControl>
             </subviews>

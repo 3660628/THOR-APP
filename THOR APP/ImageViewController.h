@@ -16,7 +16,8 @@
 
 -(IBAction)onDownloadButtonClicked:(id)sender;
 
-@property (strong, nonatomic) DJIPhantom3ProCamera *camera;
+@property (strong, nonatomic) DJIPhantom3ProCamera *cameraDownload;
+@property(strong,nonatomic) DJIDrone *phantomDroneTwo;
 @property(strong,nonatomic) NSMutableArray *imageArray;
 @property(strong,nonatomic) UIAlertController *downloadProgressAlert;
 

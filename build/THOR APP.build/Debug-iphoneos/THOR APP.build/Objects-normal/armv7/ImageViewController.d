@@ -56,4 +56,6 @@ dependencies: \
   /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/THOR\ APP/DJISDK.framework/Headers/DJIInspireRemoteController.h \
   /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/THOR\ APP/DJISDK.framework/Headers/DJIPhantom3ProRemoteController.h \
   /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/THOR\ APP/DJISDK.framework/Headers/DJIPhantom3AdvancedRemoteController.h \
-  /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/THOR\ APP/DJISDK.framework/Headers/DJIFirmwareManager.h
+  /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/THOR\ APP/DJISDK.framework/Headers/DJIFirmwareManager.h \
+  /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/build/THOR\ APP.build/Debug-iphoneos/THOR\ APP.build/DerivedSources/THOR_APP-Swift.h \
+  /Users/Daniel/Desktop/DJI\ Phantom\ 3/THOR\ APP/THOR\ APP/THOR\ APP-Bridging-Header.h
