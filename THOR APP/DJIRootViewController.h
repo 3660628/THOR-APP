@@ -23,6 +23,7 @@
 @property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
 @property (atomic) DJIGpsSignalLevel gpsSignalLevel;
 @property (atomic) int gpsSatelliteCount;
+@property (nonatomic, strong) MKMapCamera *mapCamera;
 
 //status bar labels
 @property (nonatomic, strong) IBOutlet UILabel *modeLabel;

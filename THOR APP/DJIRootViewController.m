@@ -107,8 +107,11 @@
 -(void)initData
 {
     self.mapview.delegate = self;
-    self.mapview.mapType = MKMapTypeSatellite;
-    
+    //self.mapview.mapType = MKMapTypeSatellite;
+    self.mapview.mapType = MKMapTypeSatelliteFlyover;
+    self.mapview.showsBuildings = YES;
+    self.mapCamera = [[MKMapCamera alloc]init];
+
     self.droneLocation = kCLLocationCoordinate2DInvalid;
     self.userLocation = kCLLocationCoordinate2DInvalid;
     
@@ -511,11 +514,17 @@
 {
     //change to self.droneLocation, when connecting to Drone
     if(CLLocationCoordinate2DIsValid(self.userLocation)) {
-        MKCoordinateRegion region = {0};
-        region.center = self.userLocation;
-        region.span.latitudeDelta = 0.001;
-        region.span.longitudeDelta = 0.001;
-        [self.mapview setRegion:region animated:YES];
+        //For 3D maps, center location by camera, rather than region
+        //MKCoordinateRegion region = {0};
+        //region.center = self.userLocation;
+        self.mapCamera.centerCoordinate = self.userLocation;
+        self.mapCamera.pitch = 45;
+        self.mapCamera.heading = 45;
+        self.mapCamera.altitude = 300;
+        //region.span.latitudeDelta = 0.001;
+        //region.span.longitudeDelta = 0.001;
+        [self.mapview setCamera:self.mapCamera animated:NO];
+        //[self.mapview setRegion:region animated:YES];
     }
 }
 
