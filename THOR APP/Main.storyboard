@@ -75,7 +75,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="LSN-8O-xyf">
                             <color key="tintColor" red="0.42091648310000002" green="0.69748232700000001" blue="0.76999998089999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="RDD-US-vLh" kind="show" identifier="ViewImages" id="VNc-eO-1Zb"/>
+                                <segue destination="RDD-US-vLh" kind="show" id="lse-6S-Yqt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,19 +117,59 @@
                                     <action selector="onDownloadButtonClicked:" destination="RDD-US-vLh" eventType="touchUpInside" id="r6K-1V-iD8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5k-UX-ekK">
+                                <rect key="frame" x="0.0" y="523" width="375" height="77"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="Process"/>
+                                <connections>
+                                    <segue destination="TCH-9k-QRG" kind="show" id="Qh4-cR-8v2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QSM-Aj-8iD" firstAttribute="top" secondItem="f5k-UX-ekK" secondAttribute="bottom" id="3zL-La-Qme"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7pc-TC-BF3"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="downloadBtn" destination="2lw-dB-7Qx" id="u49-hm-cca"/>
+                        <outlet property="processBtn" destination="f5k-UX-ekK" id="g5E-EE-bCU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orr-jg-CVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705" y="306"/>
+            <point key="canvasLocation" x="1767" y="299"/>
+        </scene>
+        <!--Image Stitching View Controller-->
+        <scene sceneID="rwR-C6-Ksp">
+            <objects>
+                <viewController id="TCH-9k-QRG" customClass="ImageStitchingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G0q-Vi-yZU"/>
+                        <viewControllerLayoutGuide type="bottom" id="GOV-U4-K6e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y0s-Ta-Sbu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-lA-WUd">
+                                <rect key="frame" x="169" y="318" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="6zo-lA-WUd" id="Sv6-NL-OVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bg2-da-6G3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2456" y="299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ym6-P2-gwo">

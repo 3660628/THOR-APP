@@ -9,8 +9,6 @@
 #import "ImageViewController.h"
 #import <DJISDK/DJISDK.h>
 
-#import "THOR_APP-Swift.h"
-
 @interface ImageViewController () <DJICameraDelegate> {
     __block int _selectedPhotoNumber;
     __block NSMutableData *_downloadedFileData;
@@ -33,6 +31,8 @@
     UIColor *myColorGreen = [UIColor colorWithRed:104/255.0 green:175/255.0 blue:97/255.0 alpha:1.0];
     self.downloadBtn.backgroundColor = myColorGreen;
     [self.downloadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.processBtn.backgroundColor = myColorGreen;
+    [self.processBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     // Do any additional setup after loading the view.
 }
@@ -42,10 +42,17 @@
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//prepare to send downloaded images stored in image array to the image processing(stitching view)
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"Process"]) {
+        [segue.destinationViewController setValue:_imageArray forKey:@"imageArray"];
+    }
 }
 
 //Update number of selected Photos

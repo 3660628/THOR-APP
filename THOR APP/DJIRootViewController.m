@@ -43,7 +43,7 @@
     [self.locationManager stopUpdatingLocation];
     
     [self.phantomDrone.mainController stopUpdateMCSystemState];
-    [self.phantomDrone disconnectToDrone];
+    [self.phantomDrone disconnectToDrone];    
 }
 
 -(void)registerApp

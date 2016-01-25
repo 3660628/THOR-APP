@@ -13,8 +13,10 @@
 
 
 @property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
+@property (weak, nonatomic) IBOutlet UIButton *processBtn;
 
 -(IBAction)onDownloadButtonClicked:(id)sender;
+
 
 @property (strong, nonatomic) DJIPhantom3ProCamera *cameraDownload;
 @property(strong,nonatomic) DJIDrone *phantomDroneTwo;

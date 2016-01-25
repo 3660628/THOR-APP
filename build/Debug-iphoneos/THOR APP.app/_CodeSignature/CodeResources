@@ -14,15 +14,15 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		3SuHwcMmPaU21BUlyuFLgfFww+U=
+		AAu87h7h4ELfVZtzwK9fy+ACBjQ=
 		</data>
 		<key>DJIGSButtonViewController.nib</key>
 		<data>
-		QCEDBrCmYGBX7NTDv3lQXVRykrc=
+		TD1d9Kl1KM8txrMXe3Zr6SM5z6Q=
 		</data>
 		<key>DJIWaypointConfigViewController.nib</key>
 		<data>
-		5ooERxxrtMcDn1d9TLtQD6NxXj4=
+		x5BrZKaEyYVNPVbhGN250xjvk3M=
 		</data>
 		<key>Frameworks/libswiftContacts.dylib</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WIeoW5URuOXWug8gv7OrkhRnzUo=
+		D0oxAZtByYd/0KHTSdwYsanqL7Q=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -74,23 +74,31 @@
 		</data>
 		<key>Main.storyboardc/4IP-eb-ju4-view-eex-sM-eGx.nib</key>
 		<data>
-		pgAZ71wHZrf6JG6f+XhyaEDJkKQ=
+		n855ttwffRUTlY8Le6QP+5yaC9U=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
-		IWIb411HuHGePAx75SDyISx/FjQ=
+		zsqNIMSgVT1kcVUt9Z5zG+NrOzM=
 		</data>
 		<key>Main.storyboardc/RDD-US-vLh-view-GJn-5D-qpk.nib</key>
 		<data>
-		GZuzkev9EkcPZQolvd1ibAfvsqQ=
+		rPZIuv36uZVuXHkHu7XqJeZtfNE=
+		</data>
+		<key>Main.storyboardc/TCH-9k-QRG-view-y0s-Ta-Sbu.nib</key>
+		<data>
+		x0KiJ0dHB60dtPivhHBF81Y46Fw=
 		</data>
 		<key>Main.storyboardc/UINavigationController-eFw-Vd-oOV.nib</key>
 		<data>
-		kgYb2/Q8mEH9bbnsNf84qYC0xeA=
+		zLvK1nCRvpPVfxmZ5MgGxLryNuA=
 		</data>
 		<key>Main.storyboardc/UIViewController-RDD-US-vLh.nib</key>
 		<data>
-		YyQ0CHjWpNqTkybIY6nFvyv3aLc=
+		2183M+PBm9Pvi5tTfRGKOiPQM8E=
+		</data>
+		<key>Main.storyboardc/UIViewController-TCH-9k-QRG.nib</key>
+		<data>
+		aVPUr1+Bxwd8G+VLc988/q1hqRU=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -113,15 +121,15 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		3SuHwcMmPaU21BUlyuFLgfFww+U=
+		AAu87h7h4ELfVZtzwK9fy+ACBjQ=
 		</data>
 		<key>DJIGSButtonViewController.nib</key>
 		<data>
-		QCEDBrCmYGBX7NTDv3lQXVRykrc=
+		TD1d9Kl1KM8txrMXe3Zr6SM5z6Q=
 		</data>
 		<key>DJIWaypointConfigViewController.nib</key>
 		<data>
-		5ooERxxrtMcDn1d9TLtQD6NxXj4=
+		x5BrZKaEyYVNPVbhGN250xjvk3M=
 		</data>
 		<key>Frameworks/libswiftContacts.dylib</key>
 		<data>
@@ -169,23 +177,31 @@
 		</data>
 		<key>Main.storyboardc/4IP-eb-ju4-view-eex-sM-eGx.nib</key>
 		<data>
-		pgAZ71wHZrf6JG6f+XhyaEDJkKQ=
+		n855ttwffRUTlY8Le6QP+5yaC9U=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
-		IWIb411HuHGePAx75SDyISx/FjQ=
+		zsqNIMSgVT1kcVUt9Z5zG+NrOzM=
 		</data>
 		<key>Main.storyboardc/RDD-US-vLh-view-GJn-5D-qpk.nib</key>
 		<data>
-		GZuzkev9EkcPZQolvd1ibAfvsqQ=
+		rPZIuv36uZVuXHkHu7XqJeZtfNE=
+		</data>
+		<key>Main.storyboardc/TCH-9k-QRG-view-y0s-Ta-Sbu.nib</key>
+		<data>
+		x0KiJ0dHB60dtPivhHBF81Y46Fw=
 		</data>
 		<key>Main.storyboardc/UINavigationController-eFw-Vd-oOV.nib</key>
 		<data>
-		kgYb2/Q8mEH9bbnsNf84qYC0xeA=
+		zLvK1nCRvpPVfxmZ5MgGxLryNuA=
 		</data>
 		<key>Main.storyboardc/UIViewController-RDD-US-vLh.nib</key>
 		<data>
-		YyQ0CHjWpNqTkybIY6nFvyv3aLc=
+		2183M+PBm9Pvi5tTfRGKOiPQM8E=
+		</data>
+		<key>Main.storyboardc/UIViewController-TCH-9k-QRG.nib</key>
+		<data>
+		aVPUr1+Bxwd8G+VLc988/q1hqRU=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>

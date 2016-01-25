@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653125111C51732900A70433 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653125101C51732900A70433 /* DJISDK.framework */; };
+		653125131C517A8900A70433 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653125121C517A8900A70433 /* opencv2.framework */; };
+		653125151C517B0100A70433 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653125141C517B0100A70433 /* AssetsLibrary.framework */; };
+		653125181C5696B600A70433 /* OpenCVConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 653125171C5696B600A70433 /* OpenCVConversion.mm */; };
+		6531251B1C56A52A00A70433 /* StitchingWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 653125191C56A52A00A70433 /* StitchingWrapper.cpp */; };
 		65AC034F1C43466700DD51F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC034E1C43466700DD51F8 /* main.m */; };
 		65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03511C43466700DD51F8 /* AppDelegate.mm */; };
 		65AC035A1C43466700DD51F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AC03591C43466700DD51F8 /* Assets.xcassets */; };
@@ -18,7 +23,6 @@
 		65AC03801C434A2400DD51F8 /* DJIMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC037F1C434A2400DD51F8 /* DJIMapController.m */; };
 		65AC03831C434AA900DD51F8 /* DJIAircraftAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03821C434AA900DD51F8 /* DJIAircraftAnnotationView.m */; };
 		65AC03861C434AF300DD51F8 /* DJIAircraftAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03851C434AF300DD51F8 /* DJIAircraftAnnotation.m */; };
-		65C3D5761C43558600AD50A2 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C3D5751C43558600AD50A2 /* DJISDK.framework */; };
 		65C3D5781C4356D200AD50A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5771C4356D200AD50A2 /* Main.storyboard */; };
 		65C3D57A1C4356FB00AD50A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */; };
 		65C3D5851C45650A00AD50A2 /* DJIGSButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5831C45650A00AD50A2 /* DJIGSButtonViewController.m */; };
@@ -26,7 +30,7 @@
 		65C3D58A1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5881C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m */; };
 		65C3D58B1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5891C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib */; };
 		65C3D58F1C4AE17400AD50A2 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */; };
-		65C3D5921C4BFA1B00AD50A2 /* ModifyUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5911C4BFA1B00AD50A2 /* ModifyUI.swift */; };
+		65C3D5951C51628200AD50A2 /* ImageStitchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5941C51628200AD50A2 /* ImageStitchingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		653125101C51732900A70433 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = "THOR APP/DJISDK.framework"; sourceTree = "<group>"; };
+		653125121C517A8900A70433 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "THOR APP/opencv2.framework"; sourceTree = "<group>"; };
+		653125141C517B0100A70433 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		653125161C5696B600A70433 /* OpenCVConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVConversion.h; sourceTree = "<group>"; };
+		653125171C5696B600A70433 /* OpenCVConversion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVConversion.mm; sourceTree = "<group>"; };
+		653125191C56A52A00A70433 /* StitchingWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StitchingWrapper.cpp; sourceTree = "<group>"; };
+		6531251A1C56A52A00A70433 /* StitchingWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StitchingWrapper.hpp; sourceTree = "<group>"; };
 		65AC034A1C43466700DD51F8 /* THOR APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "THOR APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AC034E1C43466700DD51F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65AC03501C43466700DD51F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,7 +71,6 @@
 		65AC03821C434AA900DD51F8 /* DJIAircraftAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAircraftAnnotationView.m; sourceTree = "<group>"; };
 		65AC03841C434AF300DD51F8 /* DJIAircraftAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIAircraftAnnotation.h; sourceTree = "<group>"; };
 		65AC03851C434AF300DD51F8 /* DJIAircraftAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIAircraftAnnotation.m; sourceTree = "<group>"; };
-		65C3D5751C43558600AD50A2 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = "THOR APP/DJISDK.framework"; sourceTree = "<group>"; };
 		65C3D5771C4356D200AD50A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65C3D5821C45650A00AD50A2 /* DJIGSButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIGSButtonViewController.h; sourceTree = "<group>"; };
@@ -71,8 +81,8 @@
 		65C3D5891C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DJIWaypointConfigViewController.xib; sourceTree = "<group>"; };
 		65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		65C3D5901C4BFA1B00AD50A2 /* THOR APP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "THOR APP-Bridging-Header.h"; sourceTree = "<group>"; };
-		65C3D5911C4BFA1B00AD50A2 /* ModifyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUI.swift; sourceTree = "<group>"; };
+		65C3D5931C51628200AD50A2 /* ImageStitchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStitchingViewController.h; sourceTree = "<group>"; };
+		65C3D5941C51628200AD50A2 /* ImageStitchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStitchingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +90,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653125151C517B0100A70433 /* AssetsLibrary.framework in Frameworks */,
 				65AC03781C43477000DD51F8 /* libstdc++.6.0.9.tbd in Frameworks */,
-				65C3D5761C43558600AD50A2 /* DJISDK.framework in Frameworks */,
+				653125111C51732900A70433 /* DJISDK.framework in Frameworks */,
 				65AC03761C43475E00DD51F8 /* libz.tbd in Frameworks */,
+				653125131C517A8900A70433 /* opencv2.framework in Frameworks */,
 				65AC03741C43474100DD51F8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +135,10 @@
 				65AC03511C43466700DD51F8 /* AppDelegate.mm */,
 				65AC03791C4348F000DD51F8 /* DJIRootViewController.h */,
 				65AC037A1C4348F000DD51F8 /* DJIRootViewController.m */,
+				653125161C5696B600A70433 /* OpenCVConversion.h */,
+				653125171C5696B600A70433 /* OpenCVConversion.mm */,
+				653125191C56A52A00A70433 /* StitchingWrapper.cpp */,
+				6531251A1C56A52A00A70433 /* StitchingWrapper.hpp */,
 				65AC037E1C434A2400DD51F8 /* DJIMapController.h */,
 				65AC037F1C434A2400DD51F8 /* DJIMapController.m */,
 				65C3D5871C45BB9A00AD50A2 /* DJIWaypointConfigViewController.h */,
@@ -136,10 +152,10 @@
 				65C3D5831C45650A00AD50A2 /* DJIGSButtonViewController.m */,
 				65C3D5841C45650A00AD50A2 /* DJIGSButtonViewController.xib */,
 				65C3D5771C4356D200AD50A2 /* Main.storyboard */,
+				65C3D5931C51628200AD50A2 /* ImageStitchingViewController.h */,
+				65C3D5941C51628200AD50A2 /* ImageStitchingViewController.m */,
 				65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */,
 				65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */,
-				65C3D5911C4BFA1B00AD50A2 /* ModifyUI.swift */,
-				65C3D5901C4BFA1B00AD50A2 /* THOR APP-Bridging-Header.h */,
 				65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */,
 				65AC03591C43466700DD51F8 /* Assets.xcassets */,
 				65AC034D1C43466700DD51F8 /* Supporting Files */,
@@ -168,9 +184,11 @@
 		65AC03721C4346F200DD51F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				653125141C517B0100A70433 /* AssetsLibrary.framework */,
 				65AC03771C43477000DD51F8 /* libstdc++.6.0.9.tbd */,
 				65AC03751C43475E00DD51F8 /* libz.tbd */,
-				65C3D5751C43558600AD50A2 /* DJISDK.framework */,
+				653125121C517A8900A70433 /* opencv2.framework */,
+				653125101C51732900A70433 /* DJISDK.framework */,
 				65AC03731C43474100DD51F8 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -280,15 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653125181C5696B600A70433 /* OpenCVConversion.mm in Sources */,
 				65AC03861C434AF300DD51F8 /* DJIAircraftAnnotation.m in Sources */,
 				65C3D58A1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m in Sources */,
+				6531251B1C56A52A00A70433 /* StitchingWrapper.cpp in Sources */,
 				65C3D5851C45650A00AD50A2 /* DJIGSButtonViewController.m in Sources */,
 				65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */,
 				65AC03831C434AA900DD51F8 /* DJIAircraftAnnotationView.m in Sources */,
-				65C3D5921C4BFA1B00AD50A2 /* ModifyUI.swift in Sources */,
 				65AC034F1C43466700DD51F8 /* main.m in Sources */,
 				65C3D58F1C4AE17400AD50A2 /* ImageViewController.m in Sources */,
 				65AC03801C434A2400DD51F8 /* DJIMapController.m in Sources */,
+				65C3D5951C51628200AD50A2 /* ImageStitchingViewController.m in Sources */,
 				65AC037B1C4348F000DD51F8 /* DJIRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +428,11 @@
 					APP,
 					"$(PROJECT_DIR)/THOR",
 					APP,
+					"$(PROJECT_DIR)/THOR",
+					APP,
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/THOR APP/PrefixHeader.pch";
 				INFOPLIST_FILE = "THOR APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.DV.THOR-APP";
@@ -432,7 +456,11 @@
 					APP,
 					"$(PROJECT_DIR)/THOR",
 					APP,
+					"$(PROJECT_DIR)/THOR",
+					APP,
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/THOR APP/PrefixHeader.pch";
 				INFOPLIST_FILE = "THOR APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.DV.THOR-APP";
