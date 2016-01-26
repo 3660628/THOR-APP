@@ -1,0 +1,1162 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/build/Debug-iphoneos",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AWSAbstractKinesisRecorder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSAbstractKinesisRecorder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSAutoScaling.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSAutoScaling/AWSAutoScaling/AWSAutoScaling.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSAutoScalingModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSAutoScaling/AWSAutoScaling/AWSAutoScalingModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSAutoScalingResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSAutoScaling/AWSAutoScaling/AWSAutoScalingResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSAutoScalingService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSAutoScaling/AWSAutoScaling/AWSAutoScalingService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSBolts.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSBolts.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSBoltsVersion.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSBoltsVersion.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCancellationToken.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSCancellationToken.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCancellationTokenRegistration.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSCancellationTokenRegistration.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCancellationTokenSource.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSCancellationTokenSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCategory.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Utility/AWSCategory.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSClientContext.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Service/AWSClientContext.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCloudWatch.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCloudWatch/AWSCloudWatch/AWSCloudWatch.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCloudWatchModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCloudWatch/AWSCloudWatch/AWSCloudWatchModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCloudWatchResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCloudWatch/AWSCloudWatch/AWSCloudWatchResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCloudWatchService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCloudWatch/AWSCloudWatch/AWSCloudWatchService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognito.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/Cognito/AWSCognito.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoConflict.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/Cognito/AWSCognitoConflict.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoDataset.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/Cognito/AWSCognitoDataset.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoHandlers.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/Cognito/AWSCognitoHandlers.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoIdentity.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/CognitoIdentity/AWSCognitoIdentity.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoIdentityModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/CognitoIdentity/AWSCognitoIdentityModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoIdentityResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/CognitoIdentity/AWSCognitoIdentityResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoIdentityService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/CognitoIdentity/AWSCognitoIdentityService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoRecord.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/Cognito/AWSCognitoRecord.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/Cognito/AWSCognitoService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoSync.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/CognitoSync/AWSCognitoSync.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoSyncModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/CognitoSync/AWSCognitoSyncModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoSyncResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/CognitoSync/AWSCognitoSyncResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCognitoSyncService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCognito/CognitoSync/AWSCognitoSyncService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCore.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/AWSCore.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSCredentialsProvider.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Authentication/AWSCredentialsProvider.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSDefines.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSDefines.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSDynamoDB.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSDynamoDB/AWSDynamoDB/AWSDynamoDB.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSDynamoDBModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSDynamoDB/AWSDynamoDB/AWSDynamoDBModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSDynamoDBObjectMapper.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSDynamoDB/AWSDynamoDB/AWSDynamoDBObjectMapper.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSDynamoDBResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSDynamoDB/AWSDynamoDB/AWSDynamoDBResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSDynamoDBService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSDynamoDB/AWSDynamoDB/AWSDynamoDBService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEC2.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSEC2/AWSEC2/AWSEC2.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEC2Model.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSEC2/AWSEC2/AWSEC2Model.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEC2Resources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSEC2/AWSEC2/AWSEC2Resources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEC2Service.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSEC2/AWSEC2/AWSEC2Service.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEXTKeyPathCoding.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/extobjc/AWSEXTKeyPathCoding.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEXTRuntimeExtensions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/extobjc/AWSEXTRuntimeExtensions.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSEXTScope.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/extobjc/AWSEXTScope.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSElasticLoadBalancing.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSElasticLoadBalancing/AWSElasticLoadBalancing/AWSElasticLoadBalancing.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSElasticLoadBalancingModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSElasticLoadBalancing/AWSElasticLoadBalancing/AWSElasticLoadBalancingModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSElasticLoadBalancingResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSElasticLoadBalancing/AWSElasticLoadBalancing/AWSElasticLoadBalancingResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSElasticLoadBalancingService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSElasticLoadBalancing/AWSElasticLoadBalancing/AWSElasticLoadBalancingService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSExecutor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSExecutor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMDB.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMDB.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMDatabase+Private.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMDatabase+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMDatabase.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMDatabase.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMDatabaseAdditions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMDatabaseAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMDatabasePool.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMDatabasePool.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMDatabaseQueue.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMDatabaseQueue.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFMResultSet.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/FMDB/AWSFMResultSet.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFirehoseModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSFirehoseModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFirehoseRecorder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSFirehoseRecorder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFirehoseResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSFirehoseResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSFirehoseService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSFirehoseService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSGZIP.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/GZIP/AWSGZIP.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSIdentityProvider.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Authentication/AWSIdentityProvider.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSKinesis.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSKinesis.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSKinesisModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSKinesisModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSKinesisRecorder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSKinesisRecorder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSKinesisResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSKinesisResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSKinesisService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSKinesis/AWSKinesis/AWSKinesisService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSLambda.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSLambda/AWSLambda/AWSLambda.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSLambdaInvoker.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSLambda/AWSLambda/AWSLambdaInvoker.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSLambdaModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSLambda/AWSLambda/AWSLambdaModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSLambdaResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSLambda/AWSLambda/AWSLambdaResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSLambdaService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSLambda/AWSLambda/AWSLambdaService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSLogging.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Utility/AWSLogging.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMTLJSONAdapter.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMTLJSONAdapter.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMTLManagedObjectAdapter.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMTLManagedObjectAdapter.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMTLModel+NSCoding.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMTLModel+NSCoding.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMTLModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMTLModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMTLReflection.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMTLReflection.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMTLValueTransformer.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMTLValueTransformer.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMachineLearning.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMachineLearning/AWSMachineLearning/AWSMachineLearning.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMachineLearningModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMachineLearning/AWSMachineLearning/AWSMachineLearningModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMachineLearningResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMachineLearning/AWSMachineLearning/AWSMachineLearningResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMachineLearningService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMachineLearning/AWSMachineLearning/AWSMachineLearningService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMantle.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/AWSMantle.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalytics.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalytics.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsActiveSessionState.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsActiveSessionState.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsAppleMonetizationEventBuilder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsBufferedReader.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsBufferedReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsClientContextInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsClientContextInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsConfiguration.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsConfigurationKeys.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsConfigurationKeys.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsConfiguring.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsConfiguring.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsConnectivity.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsConnectivity.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsConnectivityPolicy.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsConnectivityPolicy.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsConstants.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsContext.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsContext.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsCountDownLatch.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsCountDownLatch.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDateUtils.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDateUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultContext.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultContext.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultDeliveryClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultDeliveryClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultEvent.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultEventClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultEventClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultFileManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultFileManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultHttpClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultHttpClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultOptions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultOptions.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultRequest.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultRequest.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultResponse.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultResponse.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultSessionClient+SessionState.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultSessionClient+SessionState.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDefaultSessionClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultSessionClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDelayedBlock.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDelayedBlock.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDeliveryClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDeliveryPolicy.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryPolicy.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsDeliveryPolicyFactory.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsDeliveryPolicyFactory.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsERS.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERS.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsERSModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERSModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsERSRequestBuilder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsERSRequestBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsERSResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERSResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsERSService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsERS/AWSMobileAnalyticsERSService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsEncryptedBufferedReader.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsEncryptedBufferedReader.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsErrorUtils.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsErrorUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsEvent.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsEventClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsEventClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsEventConstraintDecorator.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsEventConstraintDecorator.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsEventObserver.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsEventObserver.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsEventStore.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsEventStore.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsFile.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsFile.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsFileEventStore.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsFileEventStore.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsFileManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsFileManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsHttpCachingConfiguration.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsHttpCachingConfiguration.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsHttpClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsHttpClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsHttpConstants.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsHttpConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsIOSConnectivity.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSConnectivity.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsIOSLifeCycleManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSLifeCycleManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsIOSPreferences.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSPreferences.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsIOSSystem.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsIOSSystem.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsInactiveSessionState.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsInactiveSessionState.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsInstanceIdInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsInstanceIdInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsInternalEvent.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsInternalEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsInternalEventClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsInternalEventClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsJSONSerializer.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsJSONSerializer.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsLifeCycleManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsLifeCycleManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsLogInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsLogInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsMonetizationEventBuilder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsOptions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsOptions.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsPausedSessionState.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsPausedSessionState.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsPreferences.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsPreferences.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsPrefsUniqueIdService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsPrefsUniqueIdService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsRandomUUIDGenerator.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsRandomUUIDGenerator.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsRequest.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsRequest.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsRequestTimingInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsRequestTimingInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsResponse.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsResponse.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSDKInfo.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSDKInfo.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSDKInfoInterceptor.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSDKInfoInterceptor.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSerializable.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSerializable.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSerializerFactory.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSerializerFactory.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSession.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSession.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSessionClient.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSessionClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSessionClientState.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSessionClientState.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSessionStore.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSessionStore.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsStringUtils.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsStringUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSubmissionTimePolicy.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSubmissionTimePolicy.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsSystem.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsSystem.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsUniqueIdGenerator.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsUniqueIdGenerator.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsUniqueIdService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsUniqueIdService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsVirtualMonetizationEventBuilder.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSMobileAnalyticsWriter.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSMobileAnalytics/AWSMobileAnalytics/Internal/AWSMobileAnalyticsWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Utility/AWSModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSNetworking.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Networking/AWSNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSReachability.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Reachability/AWSReachability.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3Model.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3Model.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3PreSignedURL.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3PreSignedURL.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3Resources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3Resources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3Service.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3Service.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3TransferManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3TransferManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSS3TransferUtility.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSS3/AWSS3/AWSS3TransferUtility.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSES.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSES/AWSSES/AWSSES.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSESModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSES/AWSSES/AWSSESModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSESResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSES/AWSSES/AWSSESResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSESService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSES/AWSSES/AWSSESService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSNS.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSNS/AWSSNS/AWSSNS.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSNSModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSNS/AWSSNS/AWSSNSModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSNSResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSNS/AWSSNS/AWSSNSResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSNSService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSNS/AWSSNS/AWSSNSService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSQS.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSQS/AWSSQS/AWSSQS.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSQSModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSQS/AWSSQS/AWSSQSModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSQSResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSQS/AWSSQS/AWSSQSResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSQSService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSQS/AWSSQS/AWSSQSService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSTS.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/STS/AWSSTS.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSTSModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/STS/AWSSTSModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSTSResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/STS/AWSSTSResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSTSService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/STS/AWSSTSService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSerialization.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Serialization/AWSSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Service/AWSService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSServiceEnum.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Service/AWSServiceEnum.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSignature.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Authentication/AWSSignature.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSimpleDB.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSimpleDB/AWSSimpleDB/AWSSimpleDB.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSimpleDBModel.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSimpleDB/AWSSimpleDB/AWSSimpleDBModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSimpleDBResources.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSimpleDB/AWSSimpleDB/AWSSimpleDBResources.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSimpleDBService.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSSimpleDB/AWSSimpleDB/AWSSimpleDBService.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSSynchronizedMutableDictionary.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Utility/AWSSynchronizedMutableDictionary.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSTMCache.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/TMCache/AWSTMCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSTMCacheBackgroundTaskManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/TMCache/AWSTMCacheBackgroundTaskManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSTMDiskCache.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/TMCache/AWSTMDiskCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSTMMemoryCache.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/TMCache/AWSTMMemoryCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSTask.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSTask.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSTaskCompletionSource.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Bolts/AWSTaskCompletionSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSUICKeyChainStore.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/UICKeyChainStore/AWSUICKeyChainStore.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSURLRequestRetryHandler.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Serialization/AWSURLRequestRetryHandler.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSURLRequestSerialization.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Serialization/AWSURLRequestSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSURLResponseSerialization.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Serialization/AWSURLResponseSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSURLSessionManager.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Networking/AWSURLSessionManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSValidation.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Serialization/AWSValidation.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSXMLDictionary.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/XMLDictionary/AWSXMLDictionary.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSXMLWriter.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/XMLWriter/AWSXMLWriter.h"
+        },
+        {
+          'type': 'file',
+          'name': "AWSmetamacros.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/extobjc/AWSmetamacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "FABAttributes.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Fabric/FABAttributes.h"
+        },
+        {
+          'type': 'file',
+          'name': "FABKitProtocol.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Fabric/FABKitProtocol.h"
+        },
+        {
+          'type': 'file',
+          'name': "Fabric+FABKits.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Fabric/Fabric+FABKits.h"
+        },
+        {
+          'type': 'file',
+          'name': "Fabric.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Fabric/Fabric.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+AWSMTLManipulationAdditions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/NSArray+AWSMTLManipulationAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSDictionary+AWSMTLManipulationAdditions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/NSDictionary+AWSMTLManipulationAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSError+AWSMTLModelException.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/NSError+AWSMTLModelException.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+AWSMTLComparisonAdditions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/NSObject+AWSMTLComparisonAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSValueTransformer+AWSMTLInversionAdditions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/NSValueTransformer+AWSMTLInversionAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h",
+          'external-contents': "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/Pods/AWSCore/AWSCore/Mantle/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+        }
+      ]
+    }
+  ]
+}
