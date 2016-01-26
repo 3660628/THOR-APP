@@ -323,6 +323,7 @@
     
     /***********
      Safety Checks before takeoff/User can enter flight parameters
+     Comment out when testing with Simulation
      1. Must have greater than 6 satellites locked in
      2. GPS Signal should be 2 or above in order for it to go home after mission is finished
      

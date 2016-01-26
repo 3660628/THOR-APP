@@ -12,5 +12,7 @@
 
 @property(strong, nonatomic) NSMutableArray *imageArray;
 @property(strong, nonatomic)IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end

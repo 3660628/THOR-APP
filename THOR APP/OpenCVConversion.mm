@@ -87,7 +87,7 @@
                                         8*cvMat.elemSize(),     //bits per pixel
                                         cvMat.step[0],          //bytes per row
                                         colorSpace,             //colorspace
-                                        kCGImageAlphaNoneSkipLast | kCGBitmapByteOrderDefault,  //bitmap info
+                                        kCGImageAlphaNoneSkipLast | kCGBitmapByteOrderDefault,  //bitmap        info
                                         provider,               //CGDataProviderRef
                                         NULL,                   //decode
                                         false,                  //should interpolate

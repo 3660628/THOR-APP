@@ -158,6 +158,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-lA-WUd">
                                 <rect key="frame" x="169" y="318" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eH3-da-3Hr">
+                                <rect key="frame" x="59" y="264" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -165,6 +168,7 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="activityIndicator" destination="6zo-lA-WUd" id="Sv6-NL-OVV"/>
+                        <outlet property="imageView" destination="eH3-da-3Hr" id="DLE-8D-695"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bg2-da-6G3" userLabel="First Responder" sceneMemberID="firstResponder"/>

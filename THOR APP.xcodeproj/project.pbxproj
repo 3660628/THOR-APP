@@ -12,6 +12,7 @@
 		653125151C517B0100A70433 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653125141C517B0100A70433 /* AssetsLibrary.framework */; };
 		653125181C5696B600A70433 /* OpenCVConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 653125171C5696B600A70433 /* OpenCVConversion.mm */; };
 		6531251B1C56A52A00A70433 /* StitchingWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 653125191C56A52A00A70433 /* StitchingWrapper.cpp */; };
+		6531251E1C56F5FD00A70433 /* Stitching.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6531251D1C56F5FD00A70433 /* Stitching.mm */; };
 		65AC034F1C43466700DD51F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC034E1C43466700DD51F8 /* main.m */; };
 		65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03511C43466700DD51F8 /* AppDelegate.mm */; };
 		65AC035A1C43466700DD51F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AC03591C43466700DD51F8 /* Assets.xcassets */; };
@@ -30,7 +31,7 @@
 		65C3D58A1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5881C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m */; };
 		65C3D58B1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C3D5891C45BB9A00AD50A2 /* DJIWaypointConfigViewController.xib */; };
 		65C3D58F1C4AE17400AD50A2 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */; };
-		65C3D5951C51628200AD50A2 /* ImageStitchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5941C51628200AD50A2 /* ImageStitchingViewController.m */; };
+		65C3D5951C51628200AD50A2 /* ImageStitchingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65C3D5941C51628200AD50A2 /* ImageStitchingViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,9 @@
 		653125161C5696B600A70433 /* OpenCVConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVConversion.h; sourceTree = "<group>"; };
 		653125171C5696B600A70433 /* OpenCVConversion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVConversion.mm; sourceTree = "<group>"; };
 		653125191C56A52A00A70433 /* StitchingWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StitchingWrapper.cpp; sourceTree = "<group>"; };
-		6531251A1C56A52A00A70433 /* StitchingWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StitchingWrapper.hpp; sourceTree = "<group>"; };
+		6531251A1C56A52A00A70433 /* StitchingWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StitchingWrapper.h; sourceTree = "<group>"; };
+		6531251C1C56F5FD00A70433 /* Stitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stitching.h; sourceTree = "<group>"; };
+		6531251D1C56F5FD00A70433 /* Stitching.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Stitching.mm; sourceTree = "<group>"; };
 		65AC034A1C43466700DD51F8 /* THOR APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "THOR APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AC034E1C43466700DD51F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65AC03501C43466700DD51F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,7 +85,7 @@
 		65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		65C3D5931C51628200AD50A2 /* ImageStitchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStitchingViewController.h; sourceTree = "<group>"; };
-		65C3D5941C51628200AD50A2 /* ImageStitchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStitchingViewController.m; sourceTree = "<group>"; };
+		65C3D5941C51628200AD50A2 /* ImageStitchingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageStitchingViewController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +141,9 @@
 				653125161C5696B600A70433 /* OpenCVConversion.h */,
 				653125171C5696B600A70433 /* OpenCVConversion.mm */,
 				653125191C56A52A00A70433 /* StitchingWrapper.cpp */,
-				6531251A1C56A52A00A70433 /* StitchingWrapper.hpp */,
+				6531251A1C56A52A00A70433 /* StitchingWrapper.h */,
+				6531251C1C56F5FD00A70433 /* Stitching.h */,
+				6531251D1C56F5FD00A70433 /* Stitching.mm */,
 				65AC037E1C434A2400DD51F8 /* DJIMapController.h */,
 				65AC037F1C434A2400DD51F8 /* DJIMapController.m */,
 				65C3D5871C45BB9A00AD50A2 /* DJIWaypointConfigViewController.h */,
@@ -153,7 +158,7 @@
 				65C3D5841C45650A00AD50A2 /* DJIGSButtonViewController.xib */,
 				65C3D5771C4356D200AD50A2 /* Main.storyboard */,
 				65C3D5931C51628200AD50A2 /* ImageStitchingViewController.h */,
-				65C3D5941C51628200AD50A2 /* ImageStitchingViewController.m */,
+				65C3D5941C51628200AD50A2 /* ImageStitchingViewController.mm */,
 				65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */,
 				65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */,
 				65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */,
@@ -301,6 +306,7 @@
 				653125181C5696B600A70433 /* OpenCVConversion.mm in Sources */,
 				65AC03861C434AF300DD51F8 /* DJIAircraftAnnotation.m in Sources */,
 				65C3D58A1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m in Sources */,
+				6531251E1C56F5FD00A70433 /* Stitching.mm in Sources */,
 				6531251B1C56A52A00A70433 /* StitchingWrapper.cpp in Sources */,
 				65C3D5851C45650A00AD50A2 /* DJIGSButtonViewController.m in Sources */,
 				65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */,
@@ -308,7 +314,7 @@
 				65AC034F1C43466700DD51F8 /* main.m in Sources */,
 				65C3D58F1C4AE17400AD50A2 /* ImageViewController.m in Sources */,
 				65AC03801C434A2400DD51F8 /* DJIMapController.m in Sources */,
-				65C3D5951C51628200AD50A2 /* ImageStitchingViewController.m in Sources */,
+				65C3D5951C51628200AD50A2 /* ImageStitchingViewController.mm in Sources */,
 				65AC037B1C4348F000DD51F8 /* DJIRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
