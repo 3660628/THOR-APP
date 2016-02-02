@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DJIMapController.h"
 
+
 @interface DJIRootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, DJIDroneDelegate, DJIMainControllerDelegate, DJIAppManagerDelegate, GroundStationDelegate, DJINavigationDelegate, DJICameraDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
@@ -33,7 +34,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *vsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *altitudeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *batteryLabel;
+@property (nonatomic, strong) IBOutlet UILabel *batteryPercentage;
 
+@property(nonatomic, strong) DJIBattery *batteryInfo;
 @property(nonatomic, strong) DJIDrone *phantomDrone;
 @property(nonatomic, strong) DJIPhantom3ProMainController *phantomMainController;
 @property(nonatomic, strong)DJIPhantom3ProCamera *cameraMain;

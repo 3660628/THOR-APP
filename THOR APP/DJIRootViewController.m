@@ -63,6 +63,7 @@
     self.hsLabel.text = @"HS: 0.0 M/S";
     self.altitudeLabel.text = @"Alt: 0 M";
     self.batteryLabel.text = @"Power Level: ?";
+    self.batteryPercentage.text = @"Battery: ?%";
     
     //Initialize Ground Station Button View Controller
     self.gsButtonVC = [[DJIGSButtonViewController alloc]initWithNibName:@"DJIGSButtonViewController" bundle:[NSBundle mainBundle]];
@@ -326,10 +327,7 @@
      Comment out when testing with Simulation
      1. Must have greater than 6 satellites locked in
      2. GPS Signal should be 2 or above in order for it to go home after mission is finished
-     
-     //also use battery level functions to check if adequete
-     //Check if battery level is enough for current selected distance
-     //%battery per meter metric needed
+     3. Battery level should be above 40% for a mission
      ********/
     
     /***
@@ -350,8 +348,15 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
+     
+    if(self.batteryInfo.remainPowerPercent < 40) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not enough battery %" message:@"recharge battery" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
      ***/
-    
     
     [UIView animateWithDuration:0.25 animations:^{
         weakSelf.waypointConfigVC.view.alpha = 1.0;
@@ -425,6 +430,12 @@
         [self.phantomMainController setMultipleFlightModeOpen:YES withResult:nil];
     }
     
+    [self.batteryInfo updateBatteryInfo:^(DJIError *error) {
+        if(error.errorCode == ERR_Succeeded) {
+            self.batteryPercentage.text = [NSString stringWithFormat:@"%ld", (long)self.batteryInfo.remainPowerPercent];
+        }
+    }];
+    
     self.modeLabel.text = state.flightModeString;
     self.gpsLabel.text = [NSString stringWithFormat:@"%d", state.satelliteCount];
     self.gpsSatelliteCount = state.satelliteCount;
@@ -476,7 +487,23 @@
         NSString *message = @"Connection Failed";
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Connection to Drone" message:message preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * action) {}];
+        handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else if(status == ConnectionStartConnect) {
+        NSString *message = @"Connection Reconnect";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Try Reconnecting" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+        handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else if(status == ConnectionBroken) {
+        NSString *message = @"Connection Broken";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Try Reconnecting" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+        handler:^(UIAlertAction * action) {}];
         [alert addAction:okAction];
         [self presentViewController:alert animated:YES completion:nil];
     }
@@ -516,16 +543,11 @@
     //change to self.droneLocation, when connecting to Drone
     if(CLLocationCoordinate2DIsValid(self.userLocation)) {
         //For 3D maps, center location by camera, rather than region
-        //MKCoordinateRegion region = {0};
-        //region.center = self.userLocation;
         self.mapCamera.centerCoordinate = self.userLocation;
         self.mapCamera.pitch = 45;
         self.mapCamera.heading = 45;
-        self.mapCamera.altitude = 300;
-        //region.span.latitudeDelta = 0.001;
-        //region.span.longitudeDelta = 0.001;
-        [self.mapview setCamera:self.mapCamera animated:NO];
-        //[self.mapview setRegion:region animated:YES];
+        self.mapCamera.altitude = 250;
+        [self.mapview setCamera:self.mapCamera animated:YES];
     }
 }
 

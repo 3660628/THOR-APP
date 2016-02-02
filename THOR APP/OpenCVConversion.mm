@@ -62,7 +62,7 @@
 +(cv::Mat)cvmat3FromUIImage:(UIImage *)image
 {
     cv::Mat result = [self cvMatFromUIImage:image];
-    cv::cvtColor(result, result, CV_RGBA2RGB);
+    //cv::cvtColor(result, result, CV_RGBA2RGB);
     return result;
 }
 

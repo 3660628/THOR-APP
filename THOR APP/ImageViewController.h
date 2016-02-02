@@ -11,12 +11,12 @@
 
 @interface ImageViewController : UIViewController
 
-
 @property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
 @property (weak, nonatomic) IBOutlet UIButton *processBtn;
+@property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
 
 -(IBAction)onDownloadButtonClicked:(id)sender;
-
+-(IBAction)onUploadButtonClicked:(id)sender;
 
 @property (strong, nonatomic) DJIPhantom3ProCamera *cameraDownload;
 @property(strong,nonatomic) DJIDrone *phantomDroneTwo;

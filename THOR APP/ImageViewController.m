@@ -22,19 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.phantomDroneTwo = [[DJIDrone alloc]initWithType:DJIDrone_Phantom3Professional];
-    self.cameraDownload = (DJIPhantom3ProCamera *)_phantomDroneTwo.camera;
-    self.cameraDownload.delegate = self;
-    
-    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thorbar.png"]];
-  
-    UIColor *myColorGreen = [UIColor colorWithRed:104/255.0 green:175/255.0 blue:97/255.0 alpha:1.0];
-    self.downloadBtn.backgroundColor = myColorGreen;
-    [self.downloadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.processBtn.backgroundColor = myColorGreen;
-    [self.processBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    // Do any additional setup after loading the view.
+    [self initUI];
+    [self initDrone];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -55,6 +44,28 @@
     }
 }
 
+-(void)initUI
+{
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thorbar.png"]];
+    
+    UIColor *myColorGreen = [UIColor colorWithRed:104/255.0 green:175/255.0 blue:97/255.0 alpha:1.0];
+    self.downloadBtn.backgroundColor = myColorGreen;
+    [self.downloadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.processBtn.backgroundColor = myColorGreen;
+    [self.processBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    UIColor *myColorBlue = [UIColor colorWithRed:45/255.0 green:188/255.0 blue:220/255.0 alpha:1.0];
+    self.uploadBtn.backgroundColor = myColorBlue;
+    [self.uploadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
+
+-(void)initDrone
+{
+    self.phantomDroneTwo = [[DJIDrone alloc]initWithType:DJIDrone_Phantom3Professional];
+    self.cameraDownload = (DJIPhantom3ProCamera *)_phantomDroneTwo.camera;
+    self.cameraDownload.delegate = self;
+}
+
 //Update number of selected Photos
 #pragma  mark DJICameraDelegate
 -(void) camera:(DJICamera *)camera didUpdatePlaybackState:(DJICameraPlaybackState *)playbackState
@@ -67,8 +78,13 @@
     
 }
 
+-(IBAction)onUploadButtonClicked:(id)sender
+{
+    NSLog(@"Uploading now...");
+    //add AWS S3 upload functionality here
+}
+
 //Enter Playback mode, allows user to select photos
-//Currently Not entered into setCameraWorkMode loop
 - (IBAction)onDownloadButtonClicked:(id)sender
 {
     __weak typeof(self) weakSelf = self;
@@ -77,7 +93,7 @@
             [weakSelf selectPhotos];
         }
         else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Camera Work Mode" message:@"Enter Playback mode failed" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Drone Camera Mode" message:@"Enter Playback mode failed" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
             [alert addAction:okAction];
             [weakSelf presentViewController:alert animated:YES completion:nil];
@@ -152,5 +168,6 @@
         [self presentViewController:self.downloadProgressAlert animated:YES completion:nil];
     }
 }
+
 
 @end

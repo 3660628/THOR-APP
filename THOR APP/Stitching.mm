@@ -35,6 +35,7 @@
         }
     }
     
+    
     NSLog(@"Stitching...");
     if(!stitch(matArray, result)) {
         return false;
@@ -43,6 +44,7 @@
     return true;
 }
 
+//while testing locally, compress images
 +(UIImage *)compressedToRatio:(UIImage *)img ratio:(float)ratio
 {
     CGSize compressedSize;

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6511EEF61C580B27005CF630 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6511EEF51C580B27005CF630 /* opencv2.framework */; };
+		6511EEFB1C5D3199005CF630 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6511EEFA1C5D3199005CF630 /* opencv2.framework */; };
+		6511EF1A1C5FE590005CF630 /* AWSInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6511EF191C5FE590005CF630 /* AWSInteraction.m */; };
 		653125111C51732900A70433 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653125101C51732900A70433 /* DJISDK.framework */; };
 		653125151C517B0100A70433 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653125141C517B0100A70433 /* AssetsLibrary.framework */; };
 		653125181C5696B600A70433 /* OpenCVConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 653125171C5696B600A70433 /* OpenCVConversion.mm */; };
@@ -16,7 +17,7 @@
 		65AC034F1C43466700DD51F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC034E1C43466700DD51F8 /* main.m */; };
 		65AC03521C43466700DD51F8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03511C43466700DD51F8 /* AppDelegate.mm */; };
 		65AC035A1C43466700DD51F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AC03591C43466700DD51F8 /* Assets.xcassets */; };
-		65AC03681C43466700DD51F8 /* THOR_APPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03671C43466700DD51F8 /* THOR_APPTests.m */; };
+		65AC03681C43466700DD51F8 /* THOR_APPTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65AC03671C43466700DD51F8 /* THOR_APPTests.mm */; };
 		65AC03741C43474100DD51F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AC03731C43474100DD51F8 /* MapKit.framework */; };
 		65AC03761C43475E00DD51F8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AC03751C43475E00DD51F8 /* libz.tbd */; };
 		65AC03781C43477000DD51F8 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AC03771C43477000DD51F8 /* libstdc++.6.0.9.tbd */; };
@@ -46,7 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6511EEF51C580B27005CF630 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "THOR APP/opencv2.framework"; sourceTree = "<group>"; };
+		6511EEFA1C5D3199005CF630 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "THOR APP/opencv2.framework"; sourceTree = "<group>"; };
+		6511EF181C5FE590005CF630 /* AWSInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSInteraction.h; sourceTree = "<group>"; };
+		6511EF191C5FE590005CF630 /* AWSInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWSInteraction.m; sourceTree = "<group>"; };
 		653125101C51732900A70433 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = "THOR APP/DJISDK.framework"; sourceTree = "<group>"; };
 		653125141C517B0100A70433 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		653125161C5696B600A70433 /* OpenCVConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVConversion.h; sourceTree = "<group>"; };
@@ -63,7 +66,7 @@
 		65AC03591C43466700DD51F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65AC035E1C43466700DD51F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65AC03631C43466700DD51F8 /* THOR APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "THOR APPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		65AC03671C43466700DD51F8 /* THOR_APPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THOR_APPTests.m; sourceTree = "<group>"; };
+		65AC03671C43466700DD51F8 /* THOR_APPTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = THOR_APPTests.mm; sourceTree = "<group>"; };
 		65AC03691C43466700DD51F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65AC03731C43474100DD51F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65AC03751C43475E00DD51F8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -99,7 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				653125151C517B0100A70433 /* AssetsLibrary.framework in Frameworks */,
-				6511EEF61C580B27005CF630 /* opencv2.framework in Frameworks */,
+				6511EEFB1C5D3199005CF630 /* opencv2.framework in Frameworks */,
 				65AC03781C43477000DD51F8 /* libstdc++.6.0.9.tbd in Frameworks */,
 				653125111C51732900A70433 /* DJISDK.framework in Frameworks */,
 				65AC03761C43475E00DD51F8 /* libz.tbd in Frameworks */,
@@ -169,6 +172,8 @@
 				65C3D58D1C4AE17400AD50A2 /* ImageViewController.h */,
 				65C3D58E1C4AE17400AD50A2 /* ImageViewController.m */,
 				65C3D5791C4356FB00AD50A2 /* LaunchScreen.storyboard */,
+				6511EF181C5FE590005CF630 /* AWSInteraction.h */,
+				6511EF191C5FE590005CF630 /* AWSInteraction.m */,
 				65AC03591C43466700DD51F8 /* Assets.xcassets */,
 				65AC034D1C43466700DD51F8 /* Supporting Files */,
 			);
@@ -188,7 +193,7 @@
 		65AC03661C43466700DD51F8 /* THOR APPTests */ = {
 			isa = PBXGroup;
 			children = (
-				65AC03671C43466700DD51F8 /* THOR_APPTests.m */,
+				65AC03671C43466700DD51F8 /* THOR_APPTests.mm */,
 				65AC03691C43466700DD51F8 /* Info.plist */,
 			);
 			path = "THOR APPTests";
@@ -200,7 +205,7 @@
 				653125141C517B0100A70433 /* AssetsLibrary.framework */,
 				65AC03771C43477000DD51F8 /* libstdc++.6.0.9.tbd */,
 				65AC03751C43475E00DD51F8 /* libz.tbd */,
-				6511EEF51C580B27005CF630 /* opencv2.framework */,
+				6511EEFA1C5D3199005CF630 /* opencv2.framework */,
 				653125101C51732900A70433 /* DJISDK.framework */,
 				65AC03731C43474100DD51F8 /* MapKit.framework */,
 				86AD79CEE1D65826D32118E8 /* libPods.a */,
@@ -375,6 +380,7 @@
 				653125181C5696B600A70433 /* OpenCVConversion.mm in Sources */,
 				65AC03861C434AF300DD51F8 /* DJIAircraftAnnotation.m in Sources */,
 				65C3D58A1C45BB9A00AD50A2 /* DJIWaypointConfigViewController.m in Sources */,
+				6511EF1A1C5FE590005CF630 /* AWSInteraction.m in Sources */,
 				6531251E1C56F5FD00A70433 /* Stitching.mm in Sources */,
 				6531251B1C56A52A00A70433 /* StitchingWrapper.cpp in Sources */,
 				65C3D5851C45650A00AD50A2 /* DJIGSButtonViewController.m in Sources */,
@@ -392,7 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65AC03681C43466700DD51F8 /* THOR_APPTests.m in Sources */,
+				65AC03681C43466700DD51F8 /* THOR_APPTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +514,8 @@
 					APP,
 					"$(PROJECT_DIR)/THOR",
 					APP,
+					"$(PROJECT_DIR)/THOR",
+					APP,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/Daniel/Desktop/DJI Phantom 3/THOR APP/THOR APP/PrefixHeader.pch";
@@ -531,6 +539,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/THOR",
+					APP,
 					"$(PROJECT_DIR)/THOR",
 					APP,
 					"$(PROJECT_DIR)/THOR",

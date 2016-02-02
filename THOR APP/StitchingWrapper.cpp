@@ -9,6 +9,7 @@
 #include "StitchingWrapper.h"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/stitching/stitcher.hpp"
+#include <iostream>
 
 using namespace cv;
 
@@ -41,8 +42,13 @@ bool stitch(const cv::vector <cv::Mat> & images, cv::Mat &result)
     stitcher.setFeaturesMatcher(new detail::BestOf2NearestMatcher(false,0.3));
     stitcher.setBundleAdjuster(new detail::BundleAdjusterRay());
     
-    Stitcher::Status status = stitcher.stitch(images, result);
+    Stitcher::Status status = Stitcher::ERR_NEED_MORE_IMGS;
+    try {
+        status = stitcher.stitch(images, result);
+    }
+    catch (cv::Exception e) {}
     
+    //std::cout << status << std::endl;
     if(status != Stitcher::OK) {
         return false;
     }
