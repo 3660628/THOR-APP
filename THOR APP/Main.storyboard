@@ -59,18 +59,30 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Power Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-Kr-NjZ">
-                                <rect key="frame" x="9" y="114" width="128" height="31"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByV-vl-pys">
-                                <rect key="frame" x="9" y="153" width="128" height="31"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdu-HS-5Lb">
+                                <rect key="frame" x="9" y="127" width="76" height="34"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-OC-iyM">
+                                        <rect key="frame" x="2" y="2" width="72" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eO5-Fq-K4z">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByV-vl-pys">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,8 +99,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="altitudeLabel" destination="Vdf-hm-OBa" id="FfN-jd-4pz"/>
-                        <outlet property="batteryLabel" destination="aF0-Kr-NjZ" id="1Pm-vc-qzc"/>
+                        <outlet property="batteryBorder" destination="Fdu-HS-5Lb" id="ZFn-YV-CoI"/>
                         <outlet property="batteryPercentage" destination="ByV-vl-pys" id="JF5-wW-mEd"/>
+                        <outlet property="batterySymbol" destination="eO5-Fq-K4z" id="tm6-y1-aGS"/>
+                        <outlet property="batterySymbolBackground" destination="ayk-OC-iyM" id="Pif-uV-RJc"/>
                         <outlet property="gpsLabel" destination="2Mf-Py-spb" id="da3-RT-gMO"/>
                         <outlet property="hsLabel" destination="HeS-LE-j1H" id="e77-sJ-oKw"/>
                         <outlet property="mapview" destination="G31-ec-2lq" id="sTd-JU-SU0"/>

@@ -24,6 +24,8 @@
 @property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
 @property (atomic) DJIGpsSignalLevel gpsSignalLevel;
 @property (atomic) int gpsSatelliteCount;
+@property (atomic) int powerLevel;
+@property (atomic) long powerPercent;
 @property (nonatomic, strong) MKMapCamera *mapCamera;
 
 //status bar labels
@@ -33,8 +35,11 @@
 @property (nonatomic, strong) IBOutlet UILabel *hsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *vsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *altitudeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *batteryLabel;
 @property (nonatomic, strong) IBOutlet UILabel *batteryPercentage;
+
+@property (weak, nonatomic) IBOutlet UIView *batterySymbol;
+@property (weak, nonatomic) IBOutlet UIView *batterySymbolBackground;
+@property (weak, nonatomic) IBOutlet UIView *batteryBorder;
 
 @property(nonatomic, strong) DJIBattery *batteryInfo;
 @property(nonatomic, strong) DJIDrone *phantomDrone;

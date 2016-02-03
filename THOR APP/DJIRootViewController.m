@@ -29,6 +29,8 @@
     [self initUI];
     [self initData];
     [self initDrone];
+
+    [self registerApp];
     
 }
 
@@ -62,8 +64,7 @@
     self.vsLabel.text = @"VS: 0.0 M/S";
     self.hsLabel.text = @"HS: 0.0 M/S";
     self.altitudeLabel.text = @"Alt: 0 M";
-    self.batteryLabel.text = @"Power Level: ?";
-    self.batteryPercentage.text = @"Battery: ?%";
+    self.batteryPercentage.text = @"  Battery %";
     
     //Initialize Ground Station Button View Controller
     self.gsButtonVC = [[DJIGSButtonViewController alloc]initWithNibName:@"DJIGSButtonViewController" bundle:[NSBundle mainBundle]];
@@ -103,6 +104,9 @@
     self.altitudeLabel.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thorbar.png"]];
     
+    self.batterySymbol.backgroundColor = [UIColor colorWithRed:0/255.0 green:100/255.0 blue:17/255.0 alpha:0.8];
+    self.batterySymbolBackground.backgroundColor = [UIColor lightGrayColor];
+    self.batteryBorder.backgroundColor = [UIColor blackColor];
 }
 
 -(void)initData
@@ -124,7 +128,6 @@
 -(void)initDrone
 {
     //test when connecting to Drone simulation and drone
-    
     self.phantomDrone = [[DJIDrone alloc]initWithType:DJIDrone_Phantom3Professional];
     self.phantomDrone.delegate = self;
     
@@ -138,8 +141,6 @@
     
     self.cameraMain = (DJIPhantom3ProCamera *)_phantomDrone.camera;
     self.cameraMain.delegate = self;
-    
-    [self registerApp];
     
 }
 
@@ -252,8 +253,6 @@
     
 }
 
-
-
 #pragma mark GroundStationDelegate
 -(void) groundStation:(id<DJIGroundStation>)gs didExecuteWithResult:(GroundStationExecuteResult *)result
 {
@@ -356,7 +355,15 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-     ***/
+    if(self.powerLevel < 2) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Power Level" message:@"Power Level is too low" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    ***/
+    
     
     [UIView animateWithDuration:0.25 animations:^{
         weakSelf.waypointConfigVC.view.alpha = 1.0;
@@ -433,6 +440,10 @@
     [self.batteryInfo updateBatteryInfo:^(DJIError *error) {
         if(error.errorCode == ERR_Succeeded) {
             self.batteryPercentage.text = [NSString stringWithFormat:@"%ld", (long)self.batteryInfo.remainPowerPercent];
+            self.powerPercent = self.batteryInfo.remainPowerPercent;
+            CGRect frm = self.batterySymbol.frame;
+            frm.size.width = frm.size.width*(self.powerPercent/100);
+            self.batterySymbol.frame = frm;
         }
     }];
     
@@ -442,7 +453,7 @@
     self.vsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", state.velocityZ];
     self.hsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", (sqrtf(state.velocityX*state.velocityX + state.velocityY*state.velocityY))];
     self.altitudeLabel.text = [NSString stringWithFormat:@"%0.1f M", state.altitude];
-    self.batteryLabel.text = [NSString stringWithFormat:@"%0d", state.powerLevel];
+    self.powerLevel = state.powerLevel;
     self.gpsSignalLevel = state.gpsSignalLevel;
     
     [self.mapcontroller updateAircraftLocation:self.droneLocation withMapview:self.mapview];
@@ -547,7 +558,7 @@
         self.mapCamera.pitch = 45;
         self.mapCamera.heading = 45;
         self.mapCamera.altitude = 250;
-        [self.mapview setCamera:self.mapCamera animated:YES];
+        [self.mapview setCamera:self.mapCamera animated:NO];
     }
 }
 
