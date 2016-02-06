@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <DJISDK/DJISDK.h>
+#import "AWSInteraction.h"
 
 @interface ImageViewController : UIViewController
 

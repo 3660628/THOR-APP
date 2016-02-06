@@ -9,6 +9,7 @@
 #import "ImageStitchingViewController.h"
 #import "Stitching.h"
 #import "OpenCVConversion.h"
+#import "AWSInteraction.h"
 
 @interface ImageStitchingViewController ()
 

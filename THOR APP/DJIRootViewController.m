@@ -64,7 +64,7 @@
     self.vsLabel.text = @"VS: 0.0 M/S";
     self.hsLabel.text = @"HS: 0.0 M/S";
     self.altitudeLabel.text = @"Alt: 0 M";
-    self.batteryPercentage.text = @"  Battery %";
+    self.batteryPercentage.text = @" 100";
     
     //Initialize Ground Station Button View Controller
     self.gsButtonVC = [[DJIGSButtonViewController alloc]initWithNibName:@"DJIGSButtonViewController" bundle:[NSBundle mainBundle]];
@@ -104,9 +104,10 @@
     self.altitudeLabel.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thorbar.png"]];
     
-    self.batterySymbol.backgroundColor = [UIColor colorWithRed:0/255.0 green:100/255.0 blue:17/255.0 alpha:0.8];
-    self.batterySymbolBackground.backgroundColor = [UIColor lightGrayColor];
-    self.batteryBorder.backgroundColor = [UIColor blackColor];
+    self.batterySymbol.backgroundColor = [UIColor colorWithRed:104/255.0 green:175/255.0 blue:97/255.0 alpha:0.8];
+    self.batteryBorder.image = [UIImage imageNamed:@"battery.png"];
+    
+    
 }
 
 -(void)initData
@@ -123,6 +124,13 @@
     self.mapcontroller = [[DJIMapController alloc]init];
     self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addWaypoints:)];
     [self.mapview addGestureRecognizer:self.tapGesture];
+    
+    self.missionLengthDistance = 0.0;
+    self.missionLifeTime = 0.0;
+    
+    //advertised is 23 min, but 20 to be safe, *60 for seconds
+    self.advertisedFlightTime = 20*60;
+    self.powerPercent = 100;
 }
 
 -(void)initDrone
@@ -133,14 +141,18 @@
     
     self.navigationManager = self.phantomDrone.mainController.navigationManager;
     self.navigationManager.delegate = self;
-    
+
     self.phantomMainController = (DJIPhantom3ProMainController *)self.phantomDrone.mainController;
     self.phantomMainController.mcDelegate = self;
-    
+
     self.waypointMission = self.navigationManager.waypointMission;
     
-    self.cameraMain = (DJIPhantom3ProCamera *)_phantomDrone.camera;
-    self.cameraMain.delegate = self;
+//    self.cameraMain = (DJIPhantom3ProCamera *)_phantomDrone.camera;
+//    self.cameraMain.delegate = self;
+}
+
+-(IBAction)compassCalibrate:(id)sender
+{
     
 }
 
@@ -148,6 +160,9 @@
 -(void)cancelBtnActionInDJIWaypointConfigViewController:(DJIWaypointConfigViewController *)waypointConfigVC
 {
     __weak DJIRootViewController *weakSelf = self;
+    
+    self.missionLengthDistance = 0.0;
+    self.missionLifeTime = 0.0;
     
     [UIView animateWithDuration:0.25 animations:^{
         weakSelf.waypointConfigVC.view.alpha = 0;
@@ -163,8 +178,6 @@
         weakSelf.waypointConfigVC.view.alpha = 0;
     }];
     
-    
-    
     //enter in constant altitude that was entered in WaypointVC in for all the waypoints on mission
     for(int i = 0; i<self.waypointMission.waypointCount; i++) {
         DJIWaypoint *waypoint = [self.waypointMission waypointAtIndex:i];
@@ -175,6 +188,21 @@
     //Waypoint Missions are uploaded to drone
     self.waypointMission.maxFlightSpeed = [self.waypointConfigVC.maxFlightSpeedTextField.text floatValue];
     self.waypointMission.autoFlightSpeed = [self.waypointConfigVC.autoFlightSpeedTextField.text floatValue];
+    
+    //Estimated mission lifetime based on calculated missionLengthDistance/maxFlightSpeed in seconds
+    self.missionLifeTime = (self.missionLengthDistance)/(self.waypointMission.maxFlightSpeed);
+    
+    //check current missionLifeTime against advertisedDroneLifeTime*remaining battery percentage
+    //advertisedDroneLifeTime is 20min, or 1200sec, so missionLifeTime should be within this
+    if(self.missionLifeTime >= (self.advertisedFlightTime)*(self.powerPercent/100.0)) {
+        self.missionLifeTime = 0.0;
+        self.missionLengthDistance = 0.0;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Mission Too Long" message:@"Mission too long for remaining battery percentage" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
     
     //Heading Mode during mission
     self.waypointMission.headingMode = (DJIWaypointMissionHeadingMode)self.waypointConfigVC.headingSegmentedControl.selectedSegmentIndex;
@@ -192,9 +220,6 @@
         DJIWaypoint *waypoint = [self.waypointMission waypointAtIndex:i];
         [waypoint addAction:snapPicture];
     }
-    
-    //Should store waypoint missions between sessions, this way we can find the optimal mission for image stitching, and then load that mission, NSMutable Array
-    
     
     if(self.waypointMission.isValid) {
         if(weakSelf.uploadViewProgress == nil) {
@@ -373,6 +398,11 @@
     
     for(int i = 0; i<wayPoints.count; i++) {
         CLLocation *location = [wayPoints objectAtIndex:i];
+        if(i < (wayPoints.count)-1){
+            CLLocation *location2 = [wayPoints objectAtIndex:i+1];
+            CLLocationDistance meters = [location2 distanceFromLocation:location];
+            self.missionLengthDistance += meters;
+        }
         if(CLLocationCoordinate2DIsValid(location.coordinate)) {
             DJIWaypoint *waypoint = [[DJIWaypoint alloc] initWithCoordinate:location.coordinate];
             [self.waypointMission addWaypoint:waypoint];
@@ -423,7 +453,7 @@
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Register App" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                     handler:^(UIAlertAction * action) {}];
+    handler:^(UIAlertAction * action) {}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -437,22 +467,22 @@
         [self.phantomMainController setMultipleFlightModeOpen:YES withResult:nil];
     }
     
-    [self.batteryInfo updateBatteryInfo:^(DJIError *error) {
-        if(error.errorCode == ERR_Succeeded) {
-            self.batteryPercentage.text = [NSString stringWithFormat:@"%ld", (long)self.batteryInfo.remainPowerPercent];
-            self.powerPercent = self.batteryInfo.remainPowerPercent;
-            CGRect frm = self.batterySymbol.frame;
-            frm.size.width = frm.size.width*(self.powerPercent/100);
-            self.batterySymbol.frame = frm;
-        }
-    }];
+//    [self.batteryInfo updateBatteryInfo:^(DJIError *error) {
+//        if(error.errorCode == ERR_Succeeded) {
+//            self.batteryPercentage.text = [NSString stringWithFormat:@"%ld", (long)self.batteryInfo.remainPowerPercent];
+//            self.powerPercent = self.batteryInfo.remainPowerPercent;
+//            CGRect frm = self.batterySymbol.frame;
+//            frm.size.width = frm.size.height*(self.powerPercent/100);
+//            self.batterySymbol.frame = frm;
+//        }
+//    }];
     
     self.modeLabel.text = state.flightModeString;
-    self.gpsLabel.text = [NSString stringWithFormat:@"%d", state.satelliteCount];
+    self.gpsLabel.text = [NSString stringWithFormat:@"GPS: %d", state.satelliteCount];
     self.gpsSatelliteCount = state.satelliteCount;
-    self.vsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", state.velocityZ];
-    self.hsLabel.text = [NSString stringWithFormat:@"%0.1f M/S", (sqrtf(state.velocityX*state.velocityX + state.velocityY*state.velocityY))];
-    self.altitudeLabel.text = [NSString stringWithFormat:@"%0.1f M", state.altitude];
+    self.vsLabel.text = [NSString stringWithFormat:@"HS: %0.1f M/S", state.velocityZ];
+    self.hsLabel.text = [NSString stringWithFormat:@"VS: %0.1f M/S", (sqrtf(state.velocityX*state.velocityX + state.velocityY*state.velocityY))];
+    self.altitudeLabel.text = [NSString stringWithFormat:@"Alt: %0.1f M", state.altitude];
     self.powerLevel = state.powerLevel;
     self.gpsSignalLevel = state.gpsSignalLevel;
     
@@ -492,6 +522,12 @@
 -(void) droneOnConnectionStatusChanged:(DJIConnectionStatus)status
 {
     if(status == ConnectionSucceeded) {
+        NSString *message = @"Connection Success";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Connected to Drone" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+        handler:^(UIAlertAction * action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
         [self enterNavigationMode];
     }
     else if (status == ConnectionFailed ) {
@@ -552,8 +588,16 @@
 -(void)focusMap
 {
     //change to self.droneLocation, when connecting to Drone
-    if(CLLocationCoordinate2DIsValid(self.userLocation)) {
+    //otherwise, use self.userLocation
+    if(CLLocationCoordinate2DIsValid(self.droneLocation)) {
         //For 3D maps, center location by camera, rather than region
+        self.mapCamera.centerCoordinate = self.droneLocation;
+        self.mapCamera.pitch = 45;
+        self.mapCamera.heading = 45;
+        self.mapCamera.altitude = 250;
+        [self.mapview setCamera:self.mapCamera animated:NO];
+    }
+    else if(CLLocationCoordinate2DIsValid(self.userLocation) && !CLLocationCoordinate2DIsValid(self.droneLocation)) {
         self.mapCamera.centerCoordinate = self.userLocation;
         self.mapCamera.pitch = 45;
         self.mapCamera.heading = 45;

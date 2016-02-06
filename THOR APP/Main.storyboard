@@ -59,34 +59,30 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdu-HS-5Lb">
-                                <rect key="frame" x="9" y="127" width="76" height="34"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRl-EF-x8A">
+                                <rect key="frame" x="320" y="516" width="50" height="76"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-aV-M5p">
+                                <rect key="frame" x="326" y="524" width="38" height="56"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-OC-iyM">
-                                        <rect key="frame" x="2" y="2" width="72" height="30"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eO5-Fq-K4z">
-                                                <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByV-vl-pys">
-                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
-                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Battery %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZ0-XL-NzO">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="59"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HZ0-XL-NzO" secondAttribute="bottom" constant="10" id="Tvm-c0-7Sb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3s2-O6-hPq" firstAttribute="top" secondItem="G31-ec-2lq" secondAttribute="bottom" id="4u2-ah-k74"/>
+                            <constraint firstItem="3s2-O6-hPq" firstAttribute="top" secondItem="R0O-aV-M5p" secondAttribute="bottom" constant="10" id="4xH-Ie-UQZ"/>
+                            <constraint firstItem="3s2-O6-hPq" firstAttribute="top" secondItem="NRl-EF-x8A" secondAttribute="bottom" constant="5" id="J8L-Qu-LJf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YQx-aB-nju">
@@ -99,10 +95,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="altitudeLabel" destination="Vdf-hm-OBa" id="FfN-jd-4pz"/>
-                        <outlet property="batteryBorder" destination="Fdu-HS-5Lb" id="ZFn-YV-CoI"/>
-                        <outlet property="batteryPercentage" destination="ByV-vl-pys" id="JF5-wW-mEd"/>
-                        <outlet property="batterySymbol" destination="eO5-Fq-K4z" id="tm6-y1-aGS"/>
-                        <outlet property="batterySymbolBackground" destination="ayk-OC-iyM" id="Pif-uV-RJc"/>
+                        <outlet property="batteryBorder" destination="NRl-EF-x8A" id="5vT-EN-Faw"/>
+                        <outlet property="batteryPercentage" destination="HZ0-XL-NzO" id="ViL-vF-B24"/>
+                        <outlet property="batterySymbol" destination="R0O-aV-M5p" id="Zmx-8F-uJk"/>
                         <outlet property="gpsLabel" destination="2Mf-Py-spb" id="da3-RT-gMO"/>
                         <outlet property="hsLabel" destination="HeS-LE-j1H" id="e77-sJ-oKw"/>
                         <outlet property="mapview" destination="G31-ec-2lq" id="sTd-JU-SU0"/>
